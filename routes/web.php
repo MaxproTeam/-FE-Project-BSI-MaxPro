@@ -13,3 +13,7 @@ Route::get('/login', function () {
 Route::get('/dashboard-pic', function () {
     return view('pic.dashboard');
 });
+
+Route::get('/present-pic', function () {
+    return view('pic.present');
+});

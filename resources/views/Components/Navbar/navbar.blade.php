@@ -40,7 +40,7 @@
                 <button onclick="window.location.href='/dashboard-pic'" id="sidebar-dahsboard" class="poppins text-lg text-grey font-medium w-full text-end py-4 pr-9">
                     Dashboard
                 </button>
-                <button class="poppins text-lg text-grey font-medium w-full text-end py-4 pr-9">
+                <button onclick="window.location.href='/present-pic'" id="sidebar-present" class="poppins text-lg text-grey font-medium w-full text-end py-4 pr-9">
                     Absensi Kerja
                 </button>
                 <button class="poppins text-lg text-grey font-medium w-full text-end py-4 pr-9">
