@@ -6,7 +6,20 @@ export default {
     "./resources/**/*.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+          sm: { max: "640px" },
+          md: { min: "641px", max: "1023px" },
+          lg: { min: "1024px"},
+      },
+      colors: {
+          green: "#00BF63",
+          orange: {
+              10: "#00BF63",
+              30: "#FF914D",
+          },
+      },
+    },
   },
   plugins: [],
 }
