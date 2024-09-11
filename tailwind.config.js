@@ -13,11 +13,19 @@ export default {
           lg: { min: "1024px"},
       },
       colors: {
-          green: "#00BF63",
+          grey: "#747474",
+          green: 
+          {
+            10: "#00BF63",
+            30: "#7ED957"
+          }, 
           orange: {
               10: "#00BF63",
               30: "#FF914D",
           },
+      },
+      fontFamily: {
+        montserrat: ['Montserrat'],
       },
     },
   },
