@@ -4,7 +4,7 @@
     }
 </style>
 
-<div class="fixed top-8 bg-white w-full px-4 pb-3">
+<div class="fixed top-0 pt-8 bg-white w-full px-4 pb-3">
     <div class="flex items-center justify-between">
         <a href="/">
             <svg class="w-[182px] h-[68px]" viewBox="0 0 182 68" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -37,7 +37,7 @@
             </button>
 
             <div class="mt-6">
-                <button class="poppins text-lg text-black font-semibold bg-green-30 bg-opacity-20 w-full text-end py-4 pr-9">
+                <button onclick="window.location.href='/dashboard-pic'" id="sidebar-dahsboard" class="poppins text-lg text-grey font-medium w-full text-end py-4 pr-9">
                     Dashboard
                 </button>
                 <button class="poppins text-lg text-grey font-medium w-full text-end py-4 pr-9">
