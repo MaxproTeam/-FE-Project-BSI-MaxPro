@@ -6,14 +6,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-    return view('home');
-});
-
-Route::get('/about', function () {
-    return view('about');
-});
-
 Route::get('/login', function () {
     return view('Auth.login');
+});
+
+Route::get('/dashboard-pic', function () {
+    return view('pic.dashboard');
 });
