@@ -46,7 +46,7 @@
                 <button onclick="window.location.href='/work-schedule-pic'" id="sidebar-work-schedule" class="poppins text-lg text-grey font-medium w-full text-end py-4 pr-9">
                     Jadwal Pekerjaan
                 </button>
-                <button class="poppins text-lg text-grey font-medium w-full text-end py-4 pr-9">
+                <button onclick="window.location.href='/work-order-pic'" id="sidebar-work-order" class="poppins text-lg text-grey font-medium w-full text-end py-4 pr-9">
                     Work Order
                 </button>
             </div>

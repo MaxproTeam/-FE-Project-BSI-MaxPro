@@ -21,3 +21,7 @@ Route::get('/present-pic', function () {
 Route::get('/work-schedule-pic', function () {
     return view('pic.work-schedule');
 });
+
+Route::get('/work-order-pic', function () {
+    return view('pic.work-order');
+});
