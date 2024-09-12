@@ -11,4 +11,8 @@
     document.getElementById('sidebar-work-schedule').classList.remove('text-grey')
 </script>
 
+<script async>
+    document.title = "Jadwal Pekerjaan | Maxpro";
+</script>
+
 @endsection

@@ -19,6 +19,10 @@
 </script>
 
 <script async>
+    document.title = "Work Order | Maxpro";
+</script>
+
+<script async>
     document.getElementById('title-tugas').classList.add('hidden')
 </script>
 

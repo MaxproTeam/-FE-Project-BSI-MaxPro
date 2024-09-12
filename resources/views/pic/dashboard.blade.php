@@ -13,4 +13,8 @@
     document.getElementById('sidebar-dahsboard').classList.remove('text-grey')
 </script>
 
+<script async>
+    document.title = "Dashboard | Maxpro";
+</script>
+
 @endsection
