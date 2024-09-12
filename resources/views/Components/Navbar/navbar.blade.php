@@ -43,7 +43,7 @@
                 <button onclick="window.location.href='/present-pic'" id="sidebar-present" class="poppins text-lg text-grey font-medium w-full text-end py-4 pr-9">
                     Absensi Kerja
                 </button>
-                <button class="poppins text-lg text-grey font-medium w-full text-end py-4 pr-9">
+                <button onclick="window.location.href='/work-schedule-pic'" id="sidebar-work-schedule" class="poppins text-lg text-grey font-medium w-full text-end py-4 pr-9">
                     Jadwal Pekerjaan
                 </button>
                 <button class="poppins text-lg text-grey font-medium w-full text-end py-4 pr-9">
