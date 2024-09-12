@@ -5,7 +5,7 @@
 </style>
 
 <div class="px-4 mt-8">
-    <p class="text-lg font-bold text-orange-30">Tugasmu hari ini</p>
+    <p id="title-tugas" class="text-lg font-bold text-orange-30">Tugasmu hari ini</p>
 
     <div class="flex flex-col gap-y-[18px] mt-[18px]">
         <div class="bg-white p-3 rounded-xl drop-shadow-lg flex items-center justify-between">

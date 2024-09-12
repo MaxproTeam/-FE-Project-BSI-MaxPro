@@ -12,4 +12,8 @@
     document.getElementById('sidebar-present').classList.remove('text-grey')
 </script>
 
+<script async>
+    document.title = "Absensi | Maxpro";
+</script>
+
 @endsection
