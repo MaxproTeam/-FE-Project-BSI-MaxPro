@@ -26,4 +26,8 @@
     </div>
 </div>
 
+<script async>
+    document.getElementById('open-sidebar').classList.add('hidden')
+</script>
+
 @endsection

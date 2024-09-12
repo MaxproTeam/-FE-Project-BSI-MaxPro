@@ -4,7 +4,7 @@
     }
 </style>
 
-<div class="fixed top-0 pt-8 bg-white w-full px-4 pb-3">
+<div class="fixed top-0 z-40 pt-8 bg-white w-full px-4 pb-3">
     <div class="flex items-center justify-between">
         <a href="/">
             <svg class="w-[182px] h-[68px]" viewBox="0 0 182 68" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -18,7 +18,7 @@
             </svg>
         </a>
 
-        <button onclick="openDrawer()" class="active:scale-95 transition-all duration-100 ease-in-out">
+        <button id="open-sidebar" onclick="openDrawer()" class="active:scale-95 transition-all duration-100 ease-in-out">
             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M32.38 4H15.62C8.34 4 4 8.34 4 15.62V32.36C4 39.66 8.34 44 15.62 44H32.36C39.64 44 43.98 39.66 43.98 32.38V15.62C44 8.34 39.66 4 32.38 4ZM34 34.5H14C13.18 34.5 12.5 33.82 12.5 33C12.5 32.18 13.18 31.5 14 31.5H34C34.82 31.5 35.5 32.18 35.5 33C35.5 33.82 34.82 34.5 34 34.5ZM34 25.5H14C13.18 25.5 12.5 24.82 12.5 24C12.5 23.18 13.18 22.5 14 22.5H34C34.82 22.5 35.5 23.18 35.5 24C35.5 24.82 34.82 25.5 34 25.5ZM34 16.5H14C13.18 16.5 12.5 15.82 12.5 15C12.5 14.18 13.18 13.5 14 13.5H34C34.82 13.5 35.5 14.18 35.5 15C35.5 15.82 34.82 16.5 34 16.5Z" fill="#00BF63" />
             </svg>
@@ -36,20 +36,8 @@
                 </svg>
             </button>
 
-            <div class="mt-6">
-                <button onclick="window.location.href='/dashboard-pic'" id="sidebar-dahsboard" class="poppins text-lg text-grey font-medium w-full text-end py-4 pr-9">
-                    Dashboard
-                </button>
-                <button onclick="window.location.href='/present-pic'" id="sidebar-present" class="poppins text-lg text-grey font-medium w-full text-end py-4 pr-9">
-                    Absensi Kerja
-                </button>
-                <button onclick="window.location.href='/work-schedule-pic'" id="sidebar-work-schedule" class="poppins text-lg text-grey font-medium w-full text-end py-4 pr-9">
-                    Jadwal Pekerjaan
-                </button>
-                <button onclick="window.location.href='/work-order-pic'" id="sidebar-work-order" class="poppins text-lg text-grey font-medium w-full text-end py-4 pr-9">
-                    Work Order
-                </button>
-            </div>
+            @include('Components.Navbar.pic.item-pic')
+            @include('Components.Navbar.spv.item-spv')
         </div>
     </div>
 </div>
