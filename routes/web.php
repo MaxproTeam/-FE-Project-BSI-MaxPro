@@ -29,3 +29,11 @@ Route::get('/work-order-pic', function () {
 Route::get('/dashboard-spv', function () {
     return view('spv.dashboard');
 });
+
+Route::get('/work-checklist-spv', function () {
+    return view('spv.work-checklist');
+});
+
+Route::get('/work-check-spv', function () {
+    return view('spv.work-check');
+});

@@ -14,7 +14,7 @@
     <button onclick="window.location.href='/work-schedule-spv'" id="sidebar-work-schedule-spv" class="poppins text-lg text-grey font-medium w-full text-end py-4 pr-9">
         Jadwal Pekerjaan
     </button>
-    <button onclick="window.location.href='/work-check-spv'" id="sidebar-work-check-spv" class="poppins text-lg text-grey font-medium w-full text-end py-4 pr-9">
+    <button onclick="window.location.href='/work-checklist-spv'" id="sidebar-work-checklist-spv" class="poppins text-lg text-grey font-medium w-full text-end py-4 pr-9">
         Ceklis Pekerjaan
     </button>
     <button onclick="window.location.href='/work-order-spv'" id="sidebar-work-order-spv" class="poppins text-lg text-grey font-medium w-full text-end py-4 pr-9">
