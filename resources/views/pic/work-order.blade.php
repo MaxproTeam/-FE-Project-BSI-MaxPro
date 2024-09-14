@@ -8,7 +8,7 @@
             <p class="text-sm text-black">></p>
             <p class="text-sm font-bold text-black text-opacity-50">Work Order</p>
         </div>
-        <p class="font-bold text-orange-30 mt-1" style="font-size: 24px;">Work Order</p>
+        <p class="font-bold text-orange-30 mt-1 text-2xl">Work Order</p>
     </div>
     @include('pic.Components.Card.task')
 </div>
