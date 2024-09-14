@@ -1,3 +1,15 @@
+<style>
+    input[type="radio"]:checked+label span {
+        background-color: blue;
+        box-shadow: 0px 0px 0px 2px white inset;
+        border: 1px solid blue;
+    }
+
+    input[type="radio"]:checked+label {
+        color: black;
+    }
+</style>
+
 <div class="px-4 mt-8">
     <div class="bg-white p-3 rounded-xl drop-shadow-lg flex items-end justify-between">
         <div>
@@ -23,10 +35,82 @@
 
     <form action="" class="mt-8">
         <p class="font-semibold text-xl text-black">Bau</p>
-
-        <div>
-            <input type="radio" id="html" name="fav_language" value="HTML">
-            <label for="html" class="font-medium text-xl">YES</label><br>
+        <div class="flex items-center gap-14">
+            <div class="flex items-center mr-4 mt-5">
+                <input required id="ya-bau" type="radio" value="3" name="bau" class="hidden" />
+                <label for="ya-bau" class="flex items-center cursor-pointer text-xl font-medium select-none">
+                    <span class="bau-radio w-5 h-5 inline-block mr-[10px] rounded-full border border-[#d3d3d3] flex-no-shrink"></span>
+                    Ya
+                </label>
+            </div>
+            <div class="flex items-center mr-4 mt-5">
+                <input required id="tidak-bau" type="radio" value="3" name="bau" class="hidden" />
+                <label for="tidak-bau" class="flex items-center cursor-pointer text-xl font-medium select-none">
+                    <span class="bau-radio w-5 h-5 inline-block mr-[10px] rounded-full border border-[#d3d3d3] flex-no-shrink"></span>
+                    Tidak
+                </label>
+            </div>
         </div>
+
+        <p class="font-semibold text-xl text-black mt-5">Lantai</p>
+        <div class="flex items-center gap-14">
+            <div class="flex items-center mr-4 mt-5">
+                <input required id="ya-lantai" type="radio" value="3" name="lantai" class="hidden" />
+                <label for="ya-lantai" class="flex items-center cursor-pointer text-xl font-medium select-none">
+                    <span class="lantai-radio w-5 h-5 inline-block mr-[10px] rounded-full border border-[#d3d3d3] flex-no-shrink"></span>
+                    Ya
+                </label>
+            </div>
+            <div class="flex items-center mr-4 mt-5">
+                <input required id="tidak-lantai" type="radio" value="3" name="lantai" class="hidden" />
+                <label for="tidak-lantai" class="flex items-center cursor-pointer text-xl font-medium select-none">
+                    <span class="lantai-radio w-5 h-5 inline-block mr-[10px] rounded-full border border-[#d3d3d3] flex-no-shrink"></span>
+                    Tidak
+                </label>
+            </div>
+        </div>
+
+        <p class="font-semibold text-xl text-black mt-5">Dinding</p>
+        <div class="flex items-center gap-14">
+            <div class="flex items-center mr-4 mt-5">
+                <input required id="ya-dinding" type="radio" value="3" name="dinding" class="hidden" />
+                <label for="ya-dinding" class="flex items-center cursor-pointer text-xl font-medium select-none">
+                    <span class="dinding-radio w-5 h-5 inline-block mr-[10px] rounded-full border border-[#d3d3d3] flex-no-shrink"></span>
+                    Ya
+                </label>
+            </div>
+            <div class="flex items-center mr-4 mt-5">
+                <input required id="tidak-dinding" type="radio" value="3" name="dinding" class="hidden" />
+                <label for="tidak-dinding" class="flex items-center cursor-pointer text-xl font-medium select-none">
+                    <span class="dinding-radio w-5 h-5 inline-block mr-[10px] rounded-full border border-[#d3d3d3] flex-no-shrink"></span>
+                    Tidak
+                </label>
+            </div>
+        </div>
+
+        <p class="font-semibold text-xl text-black mt-5">Tempat Sampah</p>
+        <div class="flex items-center gap-14">
+            <div class="flex items-center mr-4 mt-5">
+                <input required id="ya-tempat-sampah" type="radio" value="3" name="tempat-sampah" class="hidden" />
+                <label for="ya-tempat-sampah" class="flex items-center cursor-pointer text-xl font-medium select-none">
+                    <span class="tempat-sampah-radio w-5 h-5 inline-block mr-[10px] rounded-full border border-[#d3d3d3] flex-no-shrink"></span>
+                    Ya
+                </label>
+            </div>
+            <div class="flex items-center mr-4 mt-5">
+                <input required id="tidak-tempat-sampah" type="radio" value="3" name="tempat-sampah" class="hidden" />
+                <label for="tidak-tempat-sampah" class="flex items-center cursor-pointer text-xl font-medium select-none">
+                    <span class="tempat-sampah-radio w-5 h-5 inline-block mr-[10px] rounded-full border border-[#d3d3d3] flex-no-shrink"></span>
+                    Tidak
+                </label>
+            </div>
+        </div>
+
+        <p class="font-semibold text-xl text-black mt-5">Catatan</p>
+        <input type="text" autocomplete="off" class="w-full bg-white px-4 py-2.5 rounded-lg drop-shadow-xl mt-4">
+
+        <button class="bg-green-10 w-full rounded-2xl h-[70px] mt-16 font-semibold text-white lg:hover:bg-green-700 sm:active:bg-gray-700 active:scale-95 transition-all duration-100 ease-in-out">
+            Simpan
+        </button>
     </form>
 </div>

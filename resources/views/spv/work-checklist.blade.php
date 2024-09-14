@@ -4,7 +4,7 @@
 <div class="mt-32 px-4">
     <div class="px-4">
         <div class="flex items-center gap-2">
-            <a href="/dashboard-pic" class="text-sm text-black">Dashboard</a>
+            <a href="/dashboard-spv" class="text-sm text-black">Dashboard</a>
             <p class="text-sm text-black">></p>
             <p class="text-sm font-bold text-black text-opacity-50">Ceklis Pekerjaan</p>
         </div>
