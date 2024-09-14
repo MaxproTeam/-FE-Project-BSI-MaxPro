@@ -25,3 +25,7 @@ Route::get('/work-schedule-pic', function () {
 Route::get('/work-order-pic', function () {
     return view('pic.work-order');
 });
+
+Route::get('/dashboard-spv', function () {
+    return view('spv.dashboard');
+});
