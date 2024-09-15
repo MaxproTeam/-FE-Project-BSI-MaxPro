@@ -3,10 +3,6 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/login', function () {
     return view('Auth.login');
 });
 
@@ -36,4 +32,12 @@ Route::get('/work-checklist-spv', function () {
 
 Route::get('/work-check-spv', function () {
     return view('spv.work-check');
+});
+
+Route::get('/work-order-spv', function () {
+    return view('spv.work-order');
+});
+
+Route::get('/work-order-check-spv', function () {
+    return view('spv.work-order-check');
 });
