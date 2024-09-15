@@ -41,3 +41,11 @@ Route::get('/work-order-spv', function () {
 Route::get('/work-order-check-spv', function () {
     return view('spv.work-order-check');
 });
+
+Route::get('/present-me-spv', function () {
+    return view('spv.present');
+});
+
+Route::get('/present-pic-spv', function () {
+    return view('spv.present-pic');
+});
