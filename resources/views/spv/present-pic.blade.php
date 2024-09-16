@@ -13,7 +13,7 @@
         <p class="font-bold text-orange-30 mt-1 text-2xl">Absensi PIC</p>
     </div>
     @include('spv.Components.Calendar.calendar')
-    @include('spv.Components.Table.present')
+    @include('spv.Components.Table.present-pic')
     @include('spv.Components.Download.job-recap')
 </div>
 
