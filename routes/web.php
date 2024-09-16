@@ -49,3 +49,7 @@ Route::get('/present-me-spv', function () {
 Route::get('/present-pic-spv', function () {
     return view('spv.present-pic');
 });
+
+Route::get('/dashboard-manager', function () {
+    return view('manager.dashboard');
+});
