@@ -53,3 +53,11 @@ Route::get('/present-pic-spv', function () {
 Route::get('/dashboard-manager', function () {
     return view('manager.dashboard');
 });
+
+Route::get('/proyek-manager', function () {
+    return view('manager.proyek');
+});
+
+Route::get('/work-order-manager', function () {
+    return view('manager.work-order');
+});
