@@ -1,27 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PICController;
 
 Route::get('/', [AuthController::class, 'login']);
 Route::get('/login', [AuthController::class, 'login']);
 
-Route::get('/dashboard-pic', function () {
-    return view('pic.dashboard');
-});
-
-Route::get('/present-pic', function () {
-    return view('pic.present');
-});
-
-Route::get('/work-schedule-pic', function () {
-    return view('pic.work-schedule');
-});
-
-Route::get('/work-order-pic', function () {
-    return view('pic.work-order');
-});
+Route::get('/dashboard-pic', [PICController::class, 'dashboard']);
+Route::get('/present-pic', [PICController::class, 'present']);
+Route::get('/work-schedule-pic', [PICController::class, 'work_schedule']);
+Route::get('/work-order-pic', [PICController::class, 'work_order']);
 
 Route::get('/dashboard-spv', function () {
     return view('spv.dashboard');

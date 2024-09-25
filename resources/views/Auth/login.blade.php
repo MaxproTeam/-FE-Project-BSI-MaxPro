@@ -28,6 +28,10 @@
         </div>
     </div>
 </div>
+
+<script>
+    window.isAuthPage = {{ Request::is('/') || Request::is('login') ? true : false }};
+</script>
 <script async>
     document.getElementById('open-sidebar').classList.add('hidden')
 </script>

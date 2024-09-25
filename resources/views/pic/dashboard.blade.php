@@ -14,6 +14,10 @@
     document.getElementById('sidebar-pic').classList.remove('hidden')
 </script>
 
+<script>
+    window.isDashboardPIC = {{ Request::is('dashboard-pic') ? true : false }};
+</script>
+
 <script async>
     document.title = "Dashboard | Maxpro";
 </script>
