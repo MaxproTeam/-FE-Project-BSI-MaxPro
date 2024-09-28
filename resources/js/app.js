@@ -1,6 +1,6 @@
 import './bootstrap';
-import loginPage from './pages/login.JS';
-import dashboardPICPage from './pages/dashboard-pic';
+import loginPage from './pages/login.js';
+import dashboardPICPage from './pages/dashboard-pic.js';
 
 (async () => {
     await loginPage();
