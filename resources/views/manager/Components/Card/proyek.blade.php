@@ -86,7 +86,7 @@
                         Supervisor : Andi
                     </p>
                 </div>
-                <button class="bg-green-10 text-white w-[147px] h-10 text-sm rounded-2xl font-bold sm:active:bg-gray-700 active:scale-95 transition-all duration-100 ease-in-out">Selengkapnya</button>
+                <button onclick="window.location.href='/detail-proyek-manager'" class="bg-green-10 text-white w-[147px] h-10 text-sm rounded-2xl font-bold sm:active:bg-gray-700 active:scale-95 transition-all duration-100 ease-in-out">Selengkapnya</button>
             </div>
         </div>
 
@@ -105,7 +105,7 @@
                         Supervisor : Andi
                     </p>
                 </div>
-                <button class="bg-green-10 text-white w-[147px] h-10 text-sm rounded-2xl font-bold sm:active:bg-gray-700 active:scale-95 transition-all duration-100 ease-in-out">Selengkapnya</button>
+                <button onclick="window.location.href='/detail-proyek-manager'" class="bg-green-10 text-white w-[147px] h-10 text-sm rounded-2xl font-bold sm:active:bg-gray-700 active:scale-95 transition-all duration-100 ease-in-out">Selengkapnya</button>
             </div>
         </div>
     </div>

@@ -49,6 +49,10 @@ Route::get('/proyek-manager', function () {
     return view('manager.proyek');
 });
 
+Route::get('/detail-proyek-manager', function () {
+    return view('manager.detail-proyek');
+});
+
 Route::get('/work-order-manager', function () {
     return view('manager.work-order');
 });
