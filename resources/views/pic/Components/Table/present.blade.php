@@ -9,23 +9,7 @@
                 <th class="uppercase font-bold text-grey text-sm tracking-tight">STATUS</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td class="text-center font-semibold text-grey text-sm pt-6">08:30 19/08/24</td>
-                <td class="text-center font-semibold text-grey text-sm pt-6">04:30 19/08/24</td>
-                <td class="text-center font-semibold text-grey text-sm pt-6">HADIR</td>
-            </tr>
-            <tr>
-                <td class="text-center font-semibold text-grey text-sm pt-6">08:30 19/08/24</td>
-                <td class="text-center font-semibold text-grey text-sm pt-6">04:30 19/08/24</td>
-                <td class="text-center font-semibold text-grey text-sm pt-6">HADIR</td>
-            </tr>
-            <tr>
-                <td class="text-center font-semibold text-grey text-sm pt-6">08:30 19/08/24</td>
-                <td class="text-center font-semibold text-grey text-sm pt-6">04:30 19/08/24</td>
-                <td class="text-center font-semibold text-grey text-sm pt-6">HADIR</td>
-            </tr>
-        </tbody>
+        <tbody id = "tbody-present"></tbody>
     </table>
     <div class="flex items-center gap-4 justify-center mt-7">
         <button>

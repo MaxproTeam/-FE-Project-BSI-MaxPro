@@ -13,6 +13,10 @@
     document.getElementById('sidebar-pic').classList.remove('hidden')
 </script>
 
+<script>
+    window.isPresentPICPage = {{ Request::is('present-pic') ? true : false }};
+</script>
+
 <script async>
     document.title = "Absensi | Maxpro";
 </script>
