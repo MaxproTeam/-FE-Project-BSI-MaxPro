@@ -15,18 +15,18 @@
           ]
         }
     ],
-    "routes": [
-       {
-          "src": "/build/assets/(.*\\.js)",
-          "dest": "/resources/js/$1"
+    "rewrites": [
+        {
+            "source": "/build/assets/(.*\\.js)",
+            "destination": "/resources/js/$1"
         },
         {
-          "src": "/build/assets/(.*\\.css)",
-          "dest": "/resources/css/$1"
+            "source": "/build/assets/(.*\\.css)",
+            "destination": "/resources/css/$1"
         },
         {
-        "src": "/(.*)",
-        "dest": "/api/index.php"
+            "source": "/(.*)",
+            "destination": "/api/index.php"
         }
     ],
     "env": {
