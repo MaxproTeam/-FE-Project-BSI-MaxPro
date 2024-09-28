@@ -5,13 +5,13 @@
         "api/index.php": { "runtime": "vercel-php@0.6.1" }
     },
     "routes": [
-        {
-              "src": "/build/assets/(.js)",
-              "dest": "/resources/js/$1"
+       {
+          "src": "/build/assets/(.*\\.js)",
+          "dest": "/resources/js/$1"
         },
         {
-              "src": "/build/assets/(.css)",
-              "dest": "/resources/css/$1"
+          "src": "/build/assets/(.*\\.css)",
+          "dest": "/resources/css/$1"
         },
         {
         "src": "/(.*)",
