@@ -2,7 +2,7 @@ import Cookie from '../utils/cookie.js';
 
 const getPICAttendance = async (data) => {
     try {
-      const response = await axios.get('http://localhost:3000/api/v1/pic/attedances', {
+      const response = await axios.get('http://192.168.1.14:3000/api/v1/pic/attedances', {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
           'Authorization': Cookie.get('key-authorization')
@@ -21,7 +21,7 @@ const getPICAttendance = async (data) => {
 
   const setPICAttendance = async (data) => {
     try {
-      const response = await axios.post('http://localhost:3000/api/v1/pic/attedances', data, {
+      const response = await axios.post('http://192.168.1.14:3000/api/v1/pic/attedances', data, {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': Cookie.get('key-authorization')
