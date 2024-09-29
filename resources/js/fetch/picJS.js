@@ -22,7 +22,7 @@ const getPICAttendance = async (data) => {
   const setPICAttendance = async (data) => {
     try {
       const response = await axios.post('https://943a-180-251-181-15.ngrok-free.app/api/v1/pic/attedances', data, {
-        headers: {
+      headers: {
           'Content-Type': 'application/json',
           'Authorization': Cookie.get('key-authorization')
         },
