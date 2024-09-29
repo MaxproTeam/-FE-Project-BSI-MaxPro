@@ -2,7 +2,7 @@ import Cookie from '../utils/cookie.js';
 
 const getPICAttendance = async (data) => {
     try {
-      const response = await axios.get('http://180.251.181.15:3000/api/v1/pic/attedances', {
+      const response = await axios.get('https://943a-180-251-181-15.ngrok-free.app/api/v1/pic/attedances', {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
           'Authorization': Cookie.get('key-authorization')
@@ -21,8 +21,8 @@ const getPICAttendance = async (data) => {
 
   const setPICAttendance = async (data) => {
     try {
-      const response = await axios.post('http://180.251.181.15:3000/api/v1/pic/attedances', data, {
-        headers: {
+      const response = await axios.post('https://943a-180-251-181-15.ngrok-free.app/api/v1/pic/attedances', data, {
+      headers: {
           'Content-Type': 'application/json',
           'Authorization': Cookie.get('key-authorization')
         },
