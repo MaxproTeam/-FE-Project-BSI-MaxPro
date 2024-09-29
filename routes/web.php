@@ -56,3 +56,7 @@ Route::get('/detail-proyek-manager', function () {
 Route::get('/work-order-manager', function () {
     return view('manager.work-order');
 });
+
+Route::get('/approval-manager', function () {
+    return view('manager.approval');
+});
