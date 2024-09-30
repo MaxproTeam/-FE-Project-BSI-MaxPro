@@ -56,3 +56,31 @@ Route::get('/detail-proyek-manager', function () {
 Route::get('/work-order-manager', function () {
     return view('manager.work-order');
 });
+
+Route::get('/approval-manager', function () {
+    return view('manager.approval');
+});
+
+Route::get('/dashboard-client', function () {
+    return view('client.dashboard');
+});
+
+Route::get('/present-client-pic', function () {
+    return view('client.present-pic');
+});
+
+Route::get('/present-client-supervisor', function () {
+    return view('client.present-supervisor');
+});
+
+Route::get('/work-check-client', function () {
+    return view('client.work-check');
+});
+
+Route::get('/work-order-client', function () {
+    return view('client.work-order');
+});
+
+Route::get('/create-work-order-client', function () {
+    return view('client.create-work-order');
+});
