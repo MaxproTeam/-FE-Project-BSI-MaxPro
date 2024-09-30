@@ -30,19 +30,19 @@
 </style>
 
 <div class="mt-32 px-4">
-    @include('client.Components.Identity.identity')
-
-    <div class="px-4 flex flex-col gap-y-7 mt-8">
-        <div onclick="window.location.href=''" class="border-gradient flex items-center gap-2.5 justify-center py-5">
-            <p class="text-lg font-bold text-black">Data Absensi</p>
+    <div class="px-4">
+        <div class="flex items-center gap-2">
+            <a href="/dashboard-manager" class="text-sm text-black">Dashboard</a>
+            <p class="text-sm text-black">></p>
+            <p class="text-sm text-black">Absensi</p>
+            <p class="text-sm text-black">></p>
+            <p class="text-sm font-bold text-black text-opacity-50">Absensi PIC</p>
         </div>
-        <div onclick="window.location.href=''" class="border-gradient flex items-center gap-2.5 justify-center py-5">
-            <p class="text-lg font-bold text-black">Ceklis Pekerjaan</p>
-        </div>
+        <p class="font-bold text-orange-30 mt-1 text-2xl">Absensi PIC</p>
     </div>
 
-    @include('client.Components.Card.work-order')
-    @include('client.Components.Download.job-recap')
+    @include('client.Components.Calendar.calendar')
+    @include('client.Components.Table.present-pic')
 </div>
 
 <script>
