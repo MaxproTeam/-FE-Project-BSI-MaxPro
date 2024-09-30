@@ -36,19 +36,19 @@
             <p class="text-sm text-black">></p>
             <p class="text-sm text-black">Absensi</p>
             <p class="text-sm text-black">></p>
-            <p class="text-sm font-bold text-black text-opacity-50">Absensi PIC</p>
+            <p class="text-sm font-bold text-black text-opacity-50">Absensi Supervisor</p>
         </div>
-        <p class="font-bold text-orange-30 mt-1 text-2xl">Absensi PIC</p>
+        <p class="font-bold text-orange-30 mt-1 text-2xl">Absensi Supervisor</p>
     </div>
 
     @include('client.Components.Calendar.calendar')
-    @include('client.Components.Table.present-pic')
+    @include('client.Components.Table.present-supervisor')
     @include('client.Components.Download.job-recap')
 </div>
 
 <script>
-    document.getElementById('sidebar-present-pic-client').classList.add('text-black', 'font-semibold', 'bg-green-30', 'bg-opacity-20')
-    document.getElementById('sidebar-present-pic-client').classList.remove('text-grey')
+    document.getElementById('sidebar-present-supervisor-client').classList.add('text-black', 'font-semibold', 'bg-green-30', 'bg-opacity-20')
+    document.getElementById('sidebar-present-supervisor-client').classList.remove('text-grey')
     document.getElementById('sidebar-client').classList.remove('hidden')
 </script>
 

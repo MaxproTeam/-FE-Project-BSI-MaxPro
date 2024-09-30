@@ -28,7 +28,7 @@ const dashboardPICPage = {
                         console.error("Geolocation is not available");
                     }
 
-                    const result = await module.setPICAttedance({ attedance : 'Hadir', latitude, longitude });
+                    const result = await module.setPICAttendance({ attedance : 'Hadir', latitude, longitude });
 
                     if (result.status_code === 201) {
                         const data = result.data;

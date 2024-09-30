@@ -1,13 +1,14 @@
 import Cookie from '../utils/cookie.js';
 
-const getPICAttedance = async () => {
+const getPICAttendance = async (data) => {
     try {
       const response = await axios.get('http://localhost:3000/api/v1/pic/attedances', {
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded',
           'Authorization': Cookie.get('key-authorization')
         },
-        withCredentials: true
+        withCredentials: true,
+        params: data
       });
       return response.data;
     } catch (err) {
@@ -18,10 +19,10 @@ const getPICAttedance = async () => {
     }
   }
 
-  const setPICAttedance = async (data) => {
+  const setPICAttendance = async (data) => {
     try {
       const response = await axios.post('http://localhost:3000/api/v1/pic/attedances', data, {
-        headers: {
+      headers: {
           'Content-Type': 'application/json',
           'Authorization': Cookie.get('key-authorization')
         },
@@ -36,4 +37,4 @@ const getPICAttedance = async () => {
     }
   }
   
-  export { getPICAttedance, setPICAttedance };
+  export { getPICAttendance, setPICAttendance };
