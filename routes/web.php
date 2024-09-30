@@ -68,3 +68,19 @@ Route::get('/dashboard-client', function () {
 Route::get('/present-client-pic', function () {
     return view('client.present-pic');
 });
+
+Route::get('/present-client-supervisor', function () {
+    return view('client.present-supervisor');
+});
+
+Route::get('/work-check-client', function () {
+    return view('client.work-check');
+});
+
+Route::get('/work-order-client', function () {
+    return view('client.work-order');
+});
+
+Route::get('/create-work-order-client', function () {
+    return view('client.create-work-order');
+});
