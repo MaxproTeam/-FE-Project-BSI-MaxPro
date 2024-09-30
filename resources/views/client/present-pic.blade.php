@@ -32,7 +32,7 @@
 <div class="mt-32 px-4">
     <div class="px-4">
         <div class="flex items-center gap-2">
-            <a href="/dashboard-manager" class="text-sm text-black">Dashboard</a>
+            <a href="/dashboard-client" class="text-sm text-black">Dashboard</a>
             <p class="text-sm text-black">></p>
             <p class="text-sm text-black">Absensi</p>
             <p class="text-sm text-black">></p>
