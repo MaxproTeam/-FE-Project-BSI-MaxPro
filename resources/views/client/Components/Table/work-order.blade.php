@@ -1,48 +1,5 @@
-<style>
-    .custom-select {
-        appearance: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="9" height="8" viewBox="0 0 9 8" fill="none"><path d="M0 0.5L8.66025 0.5L4.33013 8L0 0.5Z" fill="%23ABABAB"/></svg>') no-repeat right center;
-        background-position: right 0px center;
-    }
-
-    .border-gradient {
-        position: relative;
-        padding: 18px;
-        border-radius: 15px;
-        background: white;
-        z-index: 1;
-    }
-
-    .border-gradient::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border-radius: inherit;
-        padding: 1px;
-        background: linear-gradient(to top, #7ED957, #FF914D);
-        -webkit-mask:
-            linear-gradient(#fff 0 0) content-box,
-            linear-gradient(#fff 0 0);
-        -webkit-mask-composite: destination-out;
-        mask-composite: exclude;
-        z-index: -1;
-    }
-</style>
-
-<div onclick="dataWorkOrder()" class="border-gradient flex items-center gap-2.5 justify-center py-5">
-    <p class="text-lg font-bold text-black">Work Order</p>
-    <svg id="arrow-work-order" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M19.5 9.5L12.5 16.5L5.5 9.5" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-    </svg>
-</div>
-
-<div id="data-work-order" class="hidden">
-    <div class="px-4">
+<div id="">
+    <div class="px-4 mt-10">
         <div class="bg-white w-full rounded-t-[20px] pt-[10px] pb-3 px-5" style="box-shadow: 0px 0px 4px 0px #00000040;">
             <div class="flex items-center justify-between">
                 <select class="custom-select font-semibold text-black text-[15px] pr-4" id="monthSelect">
@@ -94,7 +51,7 @@
             <thead>
                 <tr>
                     <th class="uppercase font-bold text-grey text-sm tracking-tight">APPROVAL</th>
-                    <th class="uppercase font-bold text-grey text-sm tracking-tight">WORK ORDER</th>
+                    <th class="uppercase font-bold text-grey text-sm tracking-tight">Work Order</th>
                     <th class="uppercase font-bold text-grey text-sm tracking-tight">TGL PENGAJUAN</th>
                     <th class="uppercase font-bold text-grey text-sm tracking-tight">ABSEN PULANG</th>
                 </tr>
@@ -102,7 +59,7 @@
             <tbody>
                 <tr>
                     <td class="text-center font-semibold text-grey text-sm pt-6 w-16">
-                        <button onclick="window.location.href='/approval-manager'">
+                        <button>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="24" height="24" rx="12" fill="#00BF63" />
                                 <path d="M14.0588 6.74568L16.5294 9.15732M12.4118 18H19M5.82353 14.7845L5 18L8.29412 17.1961L17.8355 7.88237C18.1443 7.58087 18.3178 7.172 18.3178 6.74568C18.3178 6.31936 18.1443 5.9105 17.8355 5.609L17.6939 5.47073C17.385 5.16932 16.9662 5 16.5294 5C16.0927 5 15.6738 5.16932 15.3649 5.47073L5.82353 14.7845Z" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
@@ -115,7 +72,7 @@
                 </tr>
                 <tr>
                     <td class="text-center font-semibold text-grey text-sm pt-6 w-16">
-                        <button onclick="window.location.href='/approval-manager'">
+                        <button>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="24" height="24" rx="12" fill="#00BF63" />
                                 <path d="M14.0588 6.74568L16.5294 9.15732M12.4118 18H19M5.82353 14.7845L5 18L8.29412 17.1961L17.8355 7.88237C18.1443 7.58087 18.3178 7.172 18.3178 6.74568C18.3178 6.31936 18.1443 5.9105 17.8355 5.609L17.6939 5.47073C17.385 5.16932 16.9662 5 16.5294 5C16.0927 5 15.6738 5.16932 15.3649 5.47073L5.82353 14.7845Z" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
@@ -128,7 +85,7 @@
                 </tr>
                 <tr>
                     <td class="text-center font-semibold text-grey text-sm pt-6 w-16">
-                        <button onclick="window.location.href='/approval-manager'">
+                        <button>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="24" height="24" rx="12" fill="#00BF63" />
                                 <path d="M14.0588 6.74568L16.5294 9.15732M12.4118 18H19M5.82353 14.7845L5 18L8.29412 17.1961L17.8355 7.88237C18.1443 7.58087 18.3178 7.172 18.3178 6.74568C18.3178 6.31936 18.1443 5.9105 17.8355 5.609L17.6939 5.47073C17.385 5.16932 16.9662 5 16.5294 5C16.0927 5 15.6738 5.16932 15.3649 5.47073L5.82353 14.7845Z" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
@@ -142,8 +99,6 @@
             </tbody>
         </table>
     </div>
-
-    @include('manager.Components.Download.job-recap')
 </div>
 
 <script async>
@@ -163,12 +118,5 @@
         option.value = month.toLowerCase() + '-' + year;
         option.text = `${month} ${year}`;
         select.appendChild(option);
-    }
-</script>
-
-<script async>
-    function dataWorkOrder() {
-        document.getElementById('data-work-order').classList.toggle('hidden')
-        document.getElementById('arrow-work-order').classList.toggle('-rotate-90')
     }
 </script>
