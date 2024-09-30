@@ -1,38 +1,10 @@
 @extends('Layout.global-layout')
 @section('content')
 
-<style>
-    .border-gradient {
-        position: relative;
-        padding: 18px;
-        border-radius: 15px;
-        background: white;
-        z-index: 1;
-    }
-
-    .border-gradient::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border-radius: inherit;
-        padding: 1px;
-        background: linear-gradient(to top, #7ED957, #FF914D);
-        -webkit-mask:
-            linear-gradient(#fff 0 0) content-box,
-            linear-gradient(#fff 0 0);
-        -webkit-mask-composite: destination-out;
-        mask-composite: exclude;
-        z-index: -1;
-    }
-</style>
-
 <div class="mt-32 px-4">
     <div class="px-4">
         <div class="flex items-center gap-2">
-            <a href="/dashboard-manager" class="text-sm text-black">Dashboard</a>
+            <a href="/dashboard-client" class="text-sm text-black">Dashboard</a>
             <p class="text-sm text-black">></p>
             <p class="text-sm font-bold text-black text-opacity-50">Ceklis Pekerjaan</p>
         </div>

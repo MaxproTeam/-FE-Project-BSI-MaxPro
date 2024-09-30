@@ -76,3 +76,11 @@ Route::get('/present-client-supervisor', function () {
 Route::get('/work-check-client', function () {
     return view('client.work-check');
 });
+
+Route::get('/work-order-client', function () {
+    return view('client.work-order');
+});
+
+Route::get('/create-work-order-client', function () {
+    return view('client.create-work-order');
+});
