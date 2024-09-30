@@ -60,3 +60,11 @@ Route::get('/work-order-manager', function () {
 Route::get('/approval-manager', function () {
     return view('manager.approval');
 });
+
+Route::get('/dashboard-client', function () {
+    return view('client.dashboard');
+});
+
+Route::get('/present-client-pic', function () {
+    return view('client.present-pic');
+});
