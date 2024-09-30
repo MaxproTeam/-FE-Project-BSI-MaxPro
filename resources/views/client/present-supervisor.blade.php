@@ -43,6 +43,7 @@
 
     @include('client.Components.Calendar.calendar')
     @include('client.Components.Table.present-supervisor')
+    @include('client.Components.Download.job-recap')
 </div>
 
 <script>

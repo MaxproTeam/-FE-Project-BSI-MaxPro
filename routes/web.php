@@ -72,3 +72,7 @@ Route::get('/present-client-pic', function () {
 Route::get('/present-client-supervisor', function () {
     return view('client.present-supervisor');
 });
+
+Route::get('/work-check-client', function () {
+    return view('client.work-check');
+});
