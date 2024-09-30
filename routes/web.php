@@ -68,3 +68,7 @@ Route::get('/dashboard-client', function () {
 Route::get('/present-client-pic', function () {
     return view('client.present-pic');
 });
+
+Route::get('/present-client-supervisor', function () {
+    return view('client.present-supervisor');
+});
