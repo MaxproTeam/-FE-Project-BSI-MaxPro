@@ -39,6 +39,7 @@
             @include('Components.Navbar.pic.item-pic')
             @include('Components.Navbar.spv.item-spv')
             @include('Components.Navbar.manager.item-manager')
+            @include('Components.Navbar.client.item-client')
         </div>
     </div>
 </div>

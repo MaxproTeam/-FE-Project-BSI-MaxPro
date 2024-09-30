@@ -24,7 +24,7 @@
         <div class="w-full border-t-2 mt-7 border-black opacity-10"></div>
     </div>
 
-    <div class="flex flex-col gap-y-10">
+    <div class="flex flex-col gap-y-10 mt-8">
         @include('manager.Components.Card.present')
         @include('manager.Components.Card.check-work')
         @include('manager.Components.Card.work-order')
