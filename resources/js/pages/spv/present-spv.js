@@ -1,10 +1,10 @@
 import { formatDate } from '../../utils/date.js';
 
-const presentPICPage = {
+const presentSPVPage = {
     setAttendance : async () => {
-        if(window.isPresentPICPage) {
+        if(window.isPresentSPVPage) {
             try {
-                const module = await import('../../fetch/picJS.js')
+                const module = await import('../../fetch/spvJS.js')
                 const btnUserAttedance = document.getElementById('btn-attedance');
                 const tbodyPresent = document.getElementById('tbody-present');
 
@@ -29,7 +29,7 @@ const presentPICPage = {
                         console.error("Geolocation is not available");
                     }
 
-                    const result = await module.setPICAttendance({ attedance : 'Hadir', latitude, longitude });
+                    const result = await module.setSPVAttendance({ attedance : 'Hadir', latitude, longitude });
 
                     if (result.status_code === 201) {
                         const data = result.data;
@@ -54,19 +54,19 @@ const presentPICPage = {
                     }
                 })
             } catch (err) {
-                console.error('Error loading picJS:', err);
+                console.error('Error loading spvJS:', err);
             }
         }
     },
     getAttendance : async () => {
-        if(window.isPresentPICPage) {
+        if(window.isPresentSPVPage) {
             try {
-                const module = await import('../../fetch/picJS.js')
+                const module = await import('../../fetch/spvJS.js')
                 const tbodyPresent = document.getElementById('tbody-present');
                 const prevPagination = document.getElementById('btn-prev-pagination');
                 const nextPagination = document.getElementById('btn-next-pagination');
 
-                const result = await module.getPICAttendance({page : 1, limit : 7});
+                const result = await module.getSPVAttendance({page : 1, limit : 7});
 
                 if (result.status_code === 201) {
                     const { attendances, pagination } = result.data;
@@ -113,7 +113,7 @@ const presentPICPage = {
                     }
                 }
             } catch (err) {
-                console.error('Error loading picJS:', err);
+                console.error('Error loading spvJS:', err);
             }
         }
     }
@@ -122,10 +122,10 @@ const presentPICPage = {
 const updatedData = async (data) => {
     const { page } = data;
     try {
-        const module = await import('../../fetch/picJS.js');
+        const module = await import('../../fetch/spvJS.js');
         const tbodyPresent = document.getElementById('tbody-present');
         
-        const result = await module.getPICAttendance({ page, limit: 7 });
+        const result = await module.getSPVAttendance({ page, limit: 7 });
 
         if (result.status_code === 201) {
             const { attendances, pagination } = result.data;
@@ -157,7 +157,7 @@ const updatedData = async (data) => {
             }
         }
     } catch (err) {
-        console.error('Error loading picJS or fetching attendance data:', err);
+        console.error('Error loading spvJS or fetching attendance data:', err);
     }
 };
 
@@ -197,4 +197,4 @@ const updatePaginationUI = (pagination, currentPageIndex) => {
     });
 };
 
-export default presentPICPage;
+export default presentSPVPage;

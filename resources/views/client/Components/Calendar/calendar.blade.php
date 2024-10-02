@@ -9,7 +9,7 @@
 </style>
 
 <div class="px-4 mt-6">
-    <p class="text-lg font-bold text-black">Pilih Hari</p>
+    <p id="title-select-day" class="text-lg font-bold text-black">Pilih Hari</p>
 
     <div class="bg-white w-full rounded-t-[20px] pt-[10px] pb-3 px-5 mt-3.5" style="box-shadow: 0px 0px 4px 0px #00000040;">
         <div class="flex items-center justify-between">

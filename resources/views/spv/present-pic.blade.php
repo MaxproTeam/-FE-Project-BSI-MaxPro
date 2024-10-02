@@ -23,6 +23,10 @@
     document.getElementById('sidebar-spv').classList.remove('hidden')
 </script>
 
+<script>
+    window.isPresentPICSPVPage = {{ Request::is('present-pic-spv') ? true : false }};
+</script>
+
 <script async>
     document.title = "Absensi PIC | Maxpro";
 </script>

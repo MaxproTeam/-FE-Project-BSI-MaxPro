@@ -1,8 +1,8 @@
-const dashboardPICPage = {
+const dashboardSPVPage = {
     setAttendance : async () => {
-        if(window.isDashboardPIC) {
+        if(window.isDashboardSPV) {
             try {
-                const module = await import('../../fetch/picJS.js')
+                const module = await import('../../fetch/spvJS.js')
                 const btnUserAttedance = document.getElementById('btn-attedance');
 
                 btnUserAttedance.addEventListener('click', async (event) => {
@@ -26,7 +26,7 @@ const dashboardPICPage = {
                         console.error("Geolocation is not available");
                     }
 
-                    const result = await module.setPICAttendance({ attedance : 'Hadir', latitude, longitude });
+                    const result = await module.setSPVAttendance({ attedance : 'Hadir', latitude, longitude });
 
                     if (result.status_code === 201) {
                         const data = result.data;
@@ -43,10 +43,10 @@ const dashboardPICPage = {
                     }
                 })
             } catch (err) {
-                console.error('Error loading picJS:', err);
+                console.error('Error loading spvJS:', err);
             }
         }
     }
 }
 
-export default dashboardPICPage;
+export default dashboardSPVPage;

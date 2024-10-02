@@ -1,8 +1,8 @@
 import Cookie from '../utils/cookie.js';
 
-const getPICAttendance = async (data) => {
+const getSPVAttendance = async (data) => {
     try {
-      const response = await axios.get('http://localhost:3000/api/v1/pic/attedances', {
+      const response = await axios.get('http://localhost:3000/api/v1/spv/attedances', {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
           'Authorization': Cookie.get('key-authorization')
@@ -19,9 +19,9 @@ const getPICAttendance = async (data) => {
     }
   }
 
-  const setPICAttendance = async (data) => {
+  const setSPVAttendance = async (data) => {
     try {
-      const response = await axios.post('http://localhost:3000/api/v1/pic/attedances', data, {
+      const response = await axios.post('http://localhost:3000/api/v1/spv/attedances', data, {
       headers: {
           'Content-Type': 'application/json',
           'Authorization': Cookie.get('key-authorization')
@@ -37,4 +37,4 @@ const getPICAttendance = async (data) => {
     }
   }
   
-  export { getPICAttendance, setPICAttendance };
+  export { getSPVAttendance, setSPVAttendance };
