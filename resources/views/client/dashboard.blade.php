@@ -46,6 +46,10 @@
 </div>
 
 <script>
+    window.isDashboardClient= {{ Request::is('dashboard-client') ? true : false }};
+</script>
+
+<script>
     document.getElementById('sidebar-dahsboard-client').classList.add('text-black', 'font-semibold', 'bg-green-30', 'bg-opacity-20')
     document.getElementById('sidebar-dahsboard-client').classList.remove('text-grey')
     document.getElementById('sidebar-client').classList.remove('hidden')

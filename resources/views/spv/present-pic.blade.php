@@ -18,13 +18,13 @@
 </div>
 
 <script>
-    document.getElementById('sidebar-present-pic-spv').classList.add('text-black', 'font-semibold', 'bg-green-30', 'bg-opacity-20')
-    document.getElementById('sidebar-present-pic-spv').classList.remove('text-grey')
-    document.getElementById('sidebar-spv').classList.remove('hidden')
+    window.isPresentPICSPVPage = {{ Request::is('present-pic-spv') ? true : false }};
 </script>
 
 <script>
-    window.isPresentPICSPVPage = {{ Request::is('present-pic-spv') ? true : false }};
+    document.getElementById('sidebar-present-pic-spv').classList.add('text-black', 'font-semibold', 'bg-green-30', 'bg-opacity-20')
+    document.getElementById('sidebar-present-pic-spv').classList.remove('text-grey')
+    document.getElementById('sidebar-spv').classList.remove('hidden')
 </script>
 
 <script async>

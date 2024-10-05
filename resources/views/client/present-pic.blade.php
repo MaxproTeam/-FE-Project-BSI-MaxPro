@@ -47,6 +47,10 @@
 </div>
 
 <script>
+    window.isPresentPICClient= {{ Request::is('present-client-pic') ? true : false }};
+</script>
+
+<script>
     document.getElementById('sidebar-present-pic-client').classList.add('text-black', 'font-semibold', 'bg-green-30', 'bg-opacity-20')
     document.getElementById('sidebar-present-pic-client').classList.remove('text-grey')
     document.getElementById('sidebar-client').classList.remove('hidden')

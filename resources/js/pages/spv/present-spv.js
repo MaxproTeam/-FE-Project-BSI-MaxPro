@@ -63,9 +63,7 @@ const presentSPVPage = {
             try {
                 const module = await import('../../fetch/spvJS.js')
                 const tbodyPresent = document.getElementById('tbody-present');
-                const prevPagination = document.getElementById('btn-prev-pagination');
-                const nextPagination = document.getElementById('btn-next-pagination');
-
+                
                 const result = await module.getSPVAttendance({page : 1, limit : 7});
 
                 if (result.status_code === 201) {
@@ -87,23 +85,8 @@ const presentSPVPage = {
                         tbodyPresent.innerHTML += row;
                     });
                     
-                    let i = 1;
+                    updatePaginationUI(pagination, 1);
 
-                    if (pagination.currentPage <= 1) {
-                        prevPagination.querySelector('svg').classList.add('opacity-40');
-                        prevPagination.disabled = true;
-                    }
-
-                    if (pagination.currentPage >= pagination.totalPages) {
-                        nextPagination.querySelector('svg').classList.add('opacity-40');
-                        nextPagination.disabled = true;
-                    }
-
-                    nextPagination.addEventListener('click', () => {
-                        i++;
-                        updatePaginationUI(pagination, i);
-                    });
-                    
                 } else {
                     const errors = result.errors;
                     if (typeof errors === 'object' && errors !== null) {
@@ -184,13 +167,16 @@ const updatePaginationUI = (pagination, currentPageIndex) => {
         prevPagination.disabled = false;
     }
 
-    prevPagination.addEventListener('click', async () => {
+    prevPagination.replaceWith(prevPagination.cloneNode(true));
+    nextPagination.replaceWith(nextPagination.cloneNode(true));
+
+    document.getElementById('btn-prev-pagination').addEventListener('click', async () => {
         if (currentPageIndex > 1) {
             await updatedData({ page: currentPageIndex - 1 });
         }
     });
 
-    nextPagination.addEventListener('click', async () => {
+    document.getElementById('btn-next-pagination').addEventListener('click', async () => {
         if (currentPageIndex < pagination.totalPages) {
             await updatedData({ page: currentPageIndex + 1 });
         }

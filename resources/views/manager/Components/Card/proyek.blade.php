@@ -29,7 +29,7 @@
 <div id="card-proyek" class="mt-12 px-4">
     <div id="dashboard-identity" class="hidden">
         <p class="text-orange-30 font-bold text-lg">Proyek Berlangsung</p>
-        <button class="border-2 font-medium mt-6 border-green-30 bg-white text-green-30 py-1.5 px-3 rounded-xl text-xs active:bg-green-30 active:text-white">
+        <button onclick = "window.location.href='/proyek-manager'"class="border-2 font-medium mt-6 border-green-30 bg-white text-green-30 py-1.5 px-3 rounded-xl text-xs active:bg-green-30 active:text-white">
             Lihat Semua
         </button>
     </div>
@@ -56,13 +56,13 @@
             </svg>
         </button>
         <div class="flex items-center gap-4 justify-center">
-            <button>
+            <button id = "btn-prev-pagination">
                 <svg class="text-[#374151] opacity-40" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M15 19L8 12L15 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
             </button>
-            <p class="text-base text-black font-semibold">1</p>
-            <button>
+            <p class="text-base text-black font-semibold" id = "current-page">1</p>
+            <button id = "btn-next-pagination">
                 <svg class="text-[#374151]" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
@@ -70,43 +70,5 @@
         </div>
     </div>
 
-    <div class="flex flex-col gap-y-[30px] mt-[18px]">
-        <div class="bg-white p-3 pb-5 rounded-xl drop-shadow-lg border-gradient">
-            <p class="poppins text-black font-bold text-base mt-2">PT. Krama Yudha Tiga Belas</p>
-            <div class="flex items-end justify-between mt-8">
-                <div>
-                    <p class="poppins text-[#1E1E1E] text-opacity-80 font-medium text-xs mt-2 flex items-center gap-1">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10 9C11.6569 9 13 7.65685 13 6C13 4.34315 11.6569 3 10 3C8.34315 3 7 4.34315 7 6C7 7.65685 8.34315 9 10 9Z" fill="#FF914D" />
-                            <path d="M3 18C3 14.134 6.13401 11 10 11C13.866 11 17 14.134 17 18H3Z" fill="#FF914D" />
-                        </svg>
-                        13 PIC
-                    </p>
-                    <p class="poppins text-[#1E1E1E] text-opacity-80 font-medium text-xs mt-2 flex items-center gap-1">
-                        Supervisor : Andi
-                    </p>
-                </div>
-                <button onclick="window.location.href='/detail-proyek-manager'" class="bg-green-10 text-white w-[147px] h-10 text-sm rounded-2xl font-bold sm:active:bg-gray-700 active:scale-95 transition-all duration-100 ease-in-out">Selengkapnya</button>
-            </div>
-        </div>
-
-        <div class="bg-white p-3 pb-5 rounded-xl drop-shadow-lg border-gradient">
-            <p class="poppins text-black font-bold text-base mt-2">PT. Krama Yudha Tiga Belas</p>
-            <div class="flex items-end justify-between mt-8">
-                <div>
-                    <p class="poppins text-[#1E1E1E] text-opacity-80 font-medium text-xs mt-2 flex items-center gap-1">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10 9C11.6569 9 13 7.65685 13 6C13 4.34315 11.6569 3 10 3C8.34315 3 7 4.34315 7 6C7 7.65685 8.34315 9 10 9Z" fill="#FF914D" />
-                            <path d="M3 18C3 14.134 6.13401 11 10 11C13.866 11 17 14.134 17 18H3Z" fill="#FF914D" />
-                        </svg>
-                        13 PIC
-                    </p>
-                    <p class="poppins text-[#1E1E1E] text-opacity-80 font-medium text-xs mt-2 flex items-center gap-1">
-                        Supervisor : Andi
-                    </p>
-                </div>
-                <button onclick="window.location.href='/detail-proyek-manager'" class="bg-green-10 text-white w-[147px] h-10 text-sm rounded-2xl font-bold sm:active:bg-gray-700 active:scale-95 transition-all duration-100 ease-in-out">Selengkapnya</button>
-            </div>
-        </div>
-    </div>
+    <div id = "container-proyek-dashboard" class="flex flex-col gap-y-[30px] mt-[18px]"></div>
 </div>

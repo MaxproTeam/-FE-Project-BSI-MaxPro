@@ -14,6 +14,10 @@
 </div>
 
 <script>
+    window.isProyekManager= {{ Request::is('proyek-manager') ? true : false }};
+</script>
+
+<script>
     document.getElementById('sidebar-proyek-manager').classList.add('text-black', 'font-semibold', 'bg-green-30', 'bg-opacity-20')
     document.getElementById('sidebar-proyek-manager').classList.remove('text-grey')
     document.getElementById('sidebar-manager').classList.remove('hidden')
