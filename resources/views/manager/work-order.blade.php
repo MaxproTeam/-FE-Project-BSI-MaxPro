@@ -16,6 +16,10 @@
 </div>
 
 <script>
+    window.isWorkOrdersManager= {{ Request::is('work-order-manager') ? true : false }};
+</script>
+
+<script>
     document.getElementById('sidebar-work-order-manager').classList.add('text-black', 'font-semibold', 'bg-green-30', 'bg-opacity-20')
     document.getElementById('sidebar-work-order-manager').classList.remove('text-grey')
     document.getElementById('sidebar-manager').classList.remove('hidden')

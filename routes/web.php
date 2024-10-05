@@ -49,7 +49,7 @@ Route::get('/proyek-manager', function () {
     return view('manager.proyek');
 });
 
-Route::get('/detail-proyek-manager', function () {
+Route::get('/detail-proyek-manager/{id}', function () {
     return view('manager.detail-proyek');
 });
 
@@ -57,7 +57,7 @@ Route::get('/work-order-manager', function () {
     return view('manager.work-order');
 });
 
-Route::get('/approval-manager', function () {
+Route::get('/approval-manager/{id}', function () {
     return view('manager.approval');
 });
 
