@@ -17,7 +17,7 @@ import proyekManagerPage from './pages/manager/proyek.js';
 import dashboardClientPage from './pages/client/dashboard-client.js';
 import workOrdersClientPage from './pages/client/work-order-client.js';
 import presentPICClientPage from './pages/client/present-pic.js';
-import presentSPVClientPage from './pages/client/present-SPV.js';
+import presentSPVClientPage from './pages/client/present-spv.js';
 
 (async () => {
     await loginPage();
