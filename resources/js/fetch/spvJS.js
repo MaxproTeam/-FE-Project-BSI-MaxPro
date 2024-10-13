@@ -1,6 +1,6 @@
   const getPICAttedances = async (data) => {
     try {
-      const response = await axios.get(`http://localhost:3000/api/v1/spv/pic-attendances`, {
+      const response = await axios.get(`https://342e-2001-448a-2020-5ace-f131-c008-b0d7-379f.ngrok-free.app/api/v1/spv/pic-attendances`, {
         headers: {
           'Content-Type': 'application/json'
         },
@@ -18,7 +18,7 @@
 
   const getSPVAttendance = async (data) => {
     try {
-      const response = await axios.get('http://localhost:3000/api/v1/spv/attedances', {
+      const response = await axios.get('https://342e-2001-448a-2020-5ace-f131-c008-b0d7-379f.ngrok-free.app/api/v1/spv/attedances', {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         },
@@ -36,7 +36,7 @@
 
   const setSPVAttendance = async (data) => {
     try {
-      const response = await axios.post('http://localhost:3000/api/v1/spv/attedances', data, {
+      const response = await axios.post('https://342e-2001-448a-2020-5ace-f131-c008-b0d7-379f.ngrok-free.app/api/v1/spv/attedances', data, {
       headers: {
           'Content-Type': 'application/json'
         },
@@ -53,7 +53,7 @@
 
   const getPIC = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/api/v1/spv/users-pic/`, {
+      const response = await axios.get(`https://342e-2001-448a-2020-5ace-f131-c008-b0d7-379f.ngrok-free.app/api/v1/spv/users-pic/`, {
         headers: {
           'Content-Type': 'application/json'
         },
@@ -70,7 +70,7 @@
 
   const getWorkOrders = async (data) => {
     try {
-      const response = await axios.get(`http://localhost:3000/api/v1/spv/work-orders`, {
+      const response = await axios.get(`https://342e-2001-448a-2020-5ace-f131-c008-b0d7-379f.ngrok-free.app/api/v1/spv/work-orders`, {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         },
@@ -88,7 +88,7 @@
 
   const getWorkOrderById = async (data) => {
     try {
-      const response = await axios.get(`http://localhost:3000/api/v1/spv/work-orders/${data.id}`, {
+      const response = await axios.get(`https://342e-2001-448a-2020-5ace-f131-c008-b0d7-379f.ngrok-free.app/api/v1/spv/work-orders/${data.id}`, {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         },
@@ -105,7 +105,7 @@
 
   const assignWorkOrder = async (data) => {
     try {
-      const response = await axios.put(`http://localhost:3000/api/v1/spv/work-orders/`, data, {
+      const response = await axios.put(`https://342e-2001-448a-2020-5ace-f131-c008-b0d7-379f.ngrok-free.app/api/v1/spv/work-orders/`, data, {
         headers: {
           'Content-Type': 'application/json'
         },
@@ -122,7 +122,7 @@
 
   const checkWorkOrder = async (data) => {
     try {
-      const response = await axios.post(`http://localhost:3000/api/v1/spv/work-checklists/`, data, {
+      const response = await axios.post(`https://342e-2001-448a-2020-5ace-f131-c008-b0d7-379f.ngrok-free.app/api/v1/spv/work-checklists/`, data, {
         headers: {
           'Content-Type': 'application/json'
         },
