@@ -1,11 +1,8 @@
-import Cookie from '../utils/cookie.js';
-
 const getCompanies = async (data) => {
     try {
       const response = await axios.get('http://localhost:3000/api/v1/manager/companies', {
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'Authorization': Cookie.get('key-authorization')
+          'Content-Type': 'application/x-www-form-urlencoded'
         },
         withCredentials: true,
         params: data
@@ -23,8 +20,7 @@ const getCompanies = async (data) => {
     try {
       const response = await axios.get(`http://localhost:3000/api/v1/manager/companies/${data.id}`, {
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'Authorization': Cookie.get('key-authorization')
+          'Content-Type': 'application/x-www-form-urlencoded'
         },
         withCredentials: true
       });
@@ -41,10 +37,10 @@ const getCompanies = async (data) => {
     try {
       const response = await axios.get(`http://localhost:3000/api/v1/manager/company/pic-attendances/${data.id}`, {
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'Authorization': Cookie.get('key-authorization')
+          'Content-Type': 'application/x-www-form-urlencoded'
         },
-        withCredentials: true
+        withCredentials: true,
+        params: { day: data.day }
       });
       return response.data;
     } catch (err) {
@@ -59,10 +55,10 @@ const getCompanies = async (data) => {
     try {
       const response = await axios.get(`http://localhost:3000/api/v1/manager/company/work-orders/${data.id}`, {
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'Authorization': Cookie.get('key-authorization')
+          'Content-Type': 'application/x-www-form-urlencoded'
         },
-        withCredentials: true
+        withCredentials: true,
+        params: { day: data.day }
       });
       return response.data;
     } catch (err) {
@@ -77,8 +73,7 @@ const getCompanies = async (data) => {
     try {
       const response = await axios.get(`http://localhost:3000/api/v1/manager/work-orders`, {
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'Authorization': Cookie.get('key-authorization')
+          'Content-Type': 'application/x-www-form-urlencoded'
         },
         withCredentials: true,
         params: data
@@ -96,8 +91,7 @@ const getCompanies = async (data) => {
     try {
       const response = await axios.get(`http://localhost:3000/api/v1/manager/work-orders/${id}`, {
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'Authorization': Cookie.get('key-authorization')
+          'Content-Type': 'application/x-www-form-urlencoded'
         },
         withCredentials: true
       });
@@ -114,8 +108,7 @@ const getCompanies = async (data) => {
     try {
       const response = await axios.put(`http://localhost:3000/api/v1/manager/work-orders`, data, {
         headers: {
-          'Content-Type': 'application/json',
-          'Authorization': Cookie.get('key-authorization')
+          'Content-Type': 'application/json'
         },
         withCredentials: true
       });

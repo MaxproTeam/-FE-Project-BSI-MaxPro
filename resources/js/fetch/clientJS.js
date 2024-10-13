@@ -1,13 +1,13 @@
 import Cookie from '../utils/cookie.js';
 
-const getPICAttedances = async () => {
+const getPICAttedances = async (data) => {
   try {
     const response = await axios.get(`http://localhost:3000/api/v1/client/pic-attendances`, {
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Authorization': Cookie.get('key-authorization')
+        'Content-Type': 'application/x-www-form-urlencoded'
       },
-      withCredentials: true
+      withCredentials: true,
+      params: data,
     });
     return response.data;
   } catch (err) {
@@ -18,14 +18,14 @@ const getPICAttedances = async () => {
   }
 }
 
-const getSPVAttedances = async () => {
+const getSPVAttedances = async (data) => {
   try {
     const response = await axios.get(`http://localhost:3000/api/v1/client/spv-attendances`, {
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Authorization': Cookie.get('key-authorization')
+        'Content-Type': 'application/x-www-form-urlencoded'
       },
-      withCredentials: true
+      withCredentials: true,
+      params: data
     });
     return response.data;
   } catch (err) {
@@ -40,8 +40,7 @@ const getWorkOrders = async (data) => {
   try {
     const response = await axios.get(`http://localhost:3000/api/v1/client/work-orders`, {
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Authorization': Cookie.get('key-authorization')
+        'Content-Type': 'application/x-www-form-urlencoded'
       },
       withCredentials: true,
       params: data
@@ -59,8 +58,7 @@ const setWorkOrder = async (data) => {
   try {
     const response = await axios.post('http://localhost:3000/api/v1/client/work-orders', data, {
     headers: {
-        'Content-Type': 'application/json',
-        'Authorization': Cookie.get('key-authorization')
+        'Content-Type': 'application/json'
       },
       withCredentials: true
     });

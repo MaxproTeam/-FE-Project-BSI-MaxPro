@@ -115,23 +115,23 @@
 </div>
 
 <script async>
-    const monthNames = [
-        "Januari", "Februari", "Maret", "April", "Mei", "Juni",
-        "Juli", "Agustus", "September", "Oktober", "November", "Desember"
-    ];
+    // const monthNames = [
+    //     "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+    //     "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+    // ];
 
-    const select = document.getElementById('monthSelect');
-    const currentDate = new Date();
+    // const select = document.getElementById('monthSelect');
+    // const currentDate = new Date();
 
-    for (let i = 0; i < 5; i++) {
-        let futureDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + i, 1);
-        let month = monthNames[futureDate.getMonth()];
-        let year = futureDate.getFullYear();
-        let option = document.createElement('option');
-        option.value = month.toLowerCase() + '-' + year;
-        option.text = `${month} ${year}`;
-        select.appendChild(option);
-    }
+    // for (let i = 0; i < 5; i++) {
+    //     let futureDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + i, 1);
+    //     let month = monthNames[futureDate.getMonth()];
+    //     let year = futureDate.getFullYear();
+    //     let option = document.createElement('option');
+    //     option.value = month.toLowerCase() + '-' + year;
+    //     option.text = `${month} ${year}`;
+    //     select.appendChild(option);
+    // }
 </script>
 
 <script async>

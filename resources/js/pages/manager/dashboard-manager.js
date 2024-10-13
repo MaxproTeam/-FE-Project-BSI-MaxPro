@@ -1,6 +1,19 @@
 import { getDate, getDay } from '../../utils/date.js';
 
 const dashboardManagerPage = {
+    getAccount: () => {
+        if(window.isDashboardManager) {
+            const userFullname = document.getElementById('user-fullname');
+            const userRole = document.getElementById('user-role');
+
+            if(localStorage.getItem('user')) {
+                const data = JSON.parse(localStorage.getItem('user'));
+                
+                userFullname.textContent=data.full_name,
+                userRole.textContent=data.role
+            }
+        }
+    },
     getWorkOrders : async () => {
         if(window.isDashboardManager) {
             try {
@@ -33,7 +46,7 @@ const dashboardManagerPage = {
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" clip-rule="evenodd" d="M6 2C5.44772 2 5 2.44772 5 3V4H4C2.89543 4 2 4.89543 2 6V16C2 17.1046 2.89543 18 4 18H16C17.1046 18 18 17.1046 18 16V6C18 4.89543 17.1046 4 16 4H15V3C15 2.44772 14.5523 2 14 2C13.4477 2 13 2.44772 13 3V4H7V3C7 2.44772 6.55228 2 6 2ZM6 7C5.44772 7 5 7.44772 5 8C5 8.55228 5.44772 9 6 9H14C14.5523 9 15 8.55228 15 8C15 7.44772 14.5523 7 14 7H6Z" fill="#FF914D" />
                                         </svg>
-                                        ${getDay(work_order.created_at)}, ${getDate(work_order.created_at)}
+                                        ${getDay(work_order.start_work)}, ${getDate(work_order.start_work)}
                                     </p>
                                 </div>
                                 <button onclick="window.location.href='/approval-manager/${work_order.id}'" class="bg-green-10 text-white w-[147px] h-10 text-sm rounded-2xl font-bold sm:active:bg-gray-700 active:scale-95 transition-all duration-100 ease-in-out">Selengkapnya</button>

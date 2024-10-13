@@ -29,26 +29,25 @@ const loginPage = async () => {
                 if (result.status_code === 201) {
                     const data = result.data;
 
-                    Cookie.set('key-authorization', data.authorization, { expires: 1, path: '/', sameSite: 'Strict' });
+                    localStorage.setItem('user', JSON.stringify(data.user));
                     
                     switch (data.user.role) {
-                        case 1:
+                        case 'PIC Cleaning':
                             window.location.href = "/dashboard-pic";
                             break;
-                        case 2:
+                        case 'Supervisor Cleaning':
                             window.location.href = "/dashboard-spv";
                             break;
-                        case 3:
+                        case 'Manager':
                             window.location.href = "/dashboard-manager";
                             break;
-                        case 4:
+                        case 'Client':
                             window.location.href = "/dashboard-client";
                             break;
                         default:
                             console.log("Error to redirect page.")
                             break;
                     }
-
                 } else {
                     const errors = result.errors;
 
