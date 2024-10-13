@@ -1,7 +1,7 @@
 <div class="px-4 flex items-end justify-between">
     <div>
-        <h1 class="text-xl font-bold text-green-10">Halo, Syahbani</h1>
-        <p class="text-orange-30 mt-3 text-xs">Proyek PT. Krama Yudha Tiga Belas</p>
+        <h1 class="text-xl font-bold text-green-10">Halo, <span id="user-fullname"></span></h1>
+        <p class="text-orange-30 mt-3 text-xs">Proyek <span id="user-company"></span></p>
     </div>
-    <p class="text-orange-30 mt-3 font-semibold text-xs">Supervisor Cleaning</p>
+    <p id="user-role" class="text-orange-30 mt-3 font-semibold text-xs"></p>
 </div>

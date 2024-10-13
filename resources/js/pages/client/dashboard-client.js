@@ -1,10 +1,27 @@
 import { getDate, getDay } from '../../utils/date.js';
 
 const dashboardClientPage = {
+    getAccount: () => {
+        if(window.isDashboardClient) {
+            const userFullname = document.getElementById('user-fullname');
+            const userCompany = document.getElementById('user-company');
+            const userRole = document.getElementById('user-role');
+
+            if(localStorage.getItem('user')) {
+                const data = JSON.parse(localStorage.getItem('user'));
+                
+                userFullname.textContent=data.full_name,
+                userCompany.textContent=data.company,
+                userRole.textContent=data.role
+            }
+        }
+    },
     getWorkOrders : async () => {
         if(window.isDashboardClient) {
             try {
                 const module = await import('../../fetch/clientJS.js')
+                const picHeader = document.getElementById('count-pic')
+                const supervisorHeader = document.getElementById('supervisor')
                 const containerWorkOrders = document.getElementById('container-work-orders');
 
                 const result = await module.getWorkOrders({limit : 2});
@@ -25,7 +42,23 @@ const dashboardClientPage = {
                         return spv;
                     }
 
+                    const countPIC = (company_id) => {
+                        let total;
+                        data.pic.total.forEach(count => {
+                            const { company, pic} = count;
+
+                            if(company_id === company) {
+                                total = pic;
+                            }
+                        })
+
+                        return total;
+                    }
+
                     data.work_orders.forEach(work_order => {
+                        picHeader.textContent = countPIC(work_order.company_id);
+                        supervisorHeader.textContent = supervisor(work_order.company_id);
+
                         containerWorkOrders.innerHTML += `
                         <div class="bg-white p-3 rounded-xl drop-shadow-lg flex items-center justify-between">
                             <div>

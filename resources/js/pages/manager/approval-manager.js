@@ -1,10 +1,11 @@
-import { formatDate } from '../../utils/date.js';
+import { formatDate, getDate } from '../../utils/date.js';
 
 const approvalManagerPage = {
     getWorkOrder : async () => {
         if(window.isApprovalManager) {
             try {
                 const module = await import('../../fetch/managerJS.js')
+                const user = JSON.parse(localStorage.getItem('user'));
 
                 const currentUrl = new URL(window.location.href);
                 const id = currentUrl.pathname.split('/')[2]; 
@@ -35,19 +36,18 @@ const approvalManagerPage = {
 
                     woID.textContent = data.work_order.id;
                     woName.textContent = data.work_order.name;
-                    woStart.textContent = formatDate(data.work_order.start_work);
-                    woEnd.textContent = formatDate(data.work_order.end_work);
-                    woDescription.textContent = data.work_order.description;
+                    woStart.textContent = getDate(data.work_order.start_work);
+                    woEnd.textContent = getDate(data.work_order.end_work);
+                    woDescription.innerHTML = data.work_order.description.replace(/\n/g, '<br>');
                     woNotes.textContent = data.work_order.notes ? data.work_order.notes : 'Tidak ada catatan.';
-
-                    if(data.work_order.status === 'Approved'){
-                        const optionSelected = document.querySelector(`select[name="approve-select"]`)
-                        for (const option of optionSelected.options) {
-                            if (option.value == data.work_order.status) {
-                                option.selected = true;
-                            }
-                        }
-
+                    
+                    if(user.role !== 'Manager') {
+                        btnSaveApprove.classList.add('hidden');
+                    }
+                    
+                    if(data.work_order.status === 'Approved' || data.work_order.status === 'In Review'){
+                        document.querySelector(`select[name="approve-select"] option[value='Approved']`).selected = true;
+                        
                         btnSaveApprove.classList.add('hidden');
                     }
 

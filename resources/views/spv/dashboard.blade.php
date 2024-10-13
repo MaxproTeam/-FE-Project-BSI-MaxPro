@@ -4,7 +4,7 @@
 <div class="mt-32 px-4">
     @include('spv.Components.Identity.identity')
     @include('spv.Components.Present.present')
-    @include('spv.Components.Card.task')
+    @include('spv.Components.Card.work-checklist')
     @include('spv.Components.Card.work-order')
     @include('spv.Components.Download.job-recap')
 </div>
