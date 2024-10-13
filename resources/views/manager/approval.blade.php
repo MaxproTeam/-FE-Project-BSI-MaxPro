@@ -32,9 +32,16 @@
 </script>
 
 <script>
+    const myAccount = JSON.parse(localStorage.getItem('user'));
+
     document.getElementById('sidebar-proyek-manager').classList.add('text-black', 'font-semibold', 'bg-green-30', 'bg-opacity-20')
     document.getElementById('sidebar-proyek-manager').classList.remove('text-grey')
-    document.getElementById('sidebar-manager').classList.remove('hidden')
+
+    if(myAccount.role === 'Manager') {
+        document.getElementById('sidebar-manager').classList.remove('hidden')
+    }else{
+        document.getElementById('sidebar-client').classList.remove('hidden')
+    }
 </script>
 
 <script async>

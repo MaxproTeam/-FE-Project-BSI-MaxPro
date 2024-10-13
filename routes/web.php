@@ -21,7 +21,7 @@ Route::get('/work-checklist-spv', function () {
     return view('spv.work-checklist');
 });
 
-Route::get('/work-check-spv', function () {
+Route::get('/work-check-spv/{id}', function () {
     return view('spv.work-check');
 });
 
@@ -29,7 +29,7 @@ Route::get('/work-order-spv', function () {
     return view('spv.work-order');
 });
 
-Route::get('/work-order-check-spv', function () {
+Route::get('/work-order-check-spv/{id}', function () {
     return view('spv.work-order-check');
 });
 

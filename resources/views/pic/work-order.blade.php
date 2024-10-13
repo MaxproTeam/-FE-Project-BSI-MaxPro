@@ -13,6 +13,10 @@
     @include('pic.Components.Card.task')
 </div>
 
+<script>
+    window.isWorkOrdersPIC = {{ Request::is('work-order-pic') ? true : false }};
+</script>
+
 <script async>
     document.getElementById('sidebar-work-order').classList.add('text-black', 'font-semibold', 'bg-green-30', 'bg-opacity-20')
     document.getElementById('sidebar-work-order').classList.remove('text-grey')

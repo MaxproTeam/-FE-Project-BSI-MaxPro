@@ -6,12 +6,25 @@
         background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="9" height="8" viewBox="0 0 9 8" fill="none"><path d="M0 0.5L8.66025 0.5L4.33013 8L0 0.5Z" fill="%23ABABAB"/></svg>') no-repeat right center;
         background-position: right 0px center;
     }
+
+    .day-button {
+        transition: all 0.3s ease;
+    }
+    .day-button:hover {
+        transform: scale(1.05);
+    }
+    .orange-circle {
+        background-color: #FFA500;
+    }
+    .reduced-orange-circle {
+        background-color: rgba(255, 165, 0, 0.5); /* Oranye redup */
+    }
 </style>
 
-<div class="px-4">
-    <p class="text-lg font-bold text-orange-30">Jadwal Pekerjaan</p>
+<div class="px-4 mt-6">
+    <p id="title-select-day" class="text-lg font-bold text-black">Pilih Hari</p>
 
-    <div class="bg-white w-full rounded-t-[20px] pt-[10px] pb-3 px-5 mt-8" style="box-shadow: 0px 0px 4px 0px #00000040;">
+    <div class="bg-white w-full rounded-t-[20px] pt-[10px] pb-3 px-5 mt-3.5" style="box-shadow: 0px 0px 4px 0px #00000040;">
         <div class="flex items-center justify-between">
             <select class="custom-select font-semibold text-black text-[15px] pr-4" id="monthSelect">
             </select>
@@ -28,51 +41,11 @@
                 </button>
             </div>
         </div>
-        <div class="flex items-center justify-between mt-2">
-            <button class="flex flex-col items-center mt-2">
-                <p id="day" class="text-[15px] font-medium text-black">Jum</p>
-                <div id="bg-date" class="bg-orange-30 w-10 h-10 rounded-full relative mt-1">
-                    <p id="date" class="text-[15px] font-medium text-white absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">11</p>
-                </div>
-            </button>
-            <button class="flex flex-col items-center mt-2">
-                <p id="day" class="text-[15px] font-medium text-black">Sab</p>
-                <div id="bg-date" class="w-10 h-10 rounded-full relative mt-1">
-                    <p id="date" class="text-[15px] font-medium text-black absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">12</p>
-                </div>
-            </button>
-            <button class="flex flex-col items-center mt-2">
-                <p id="day" class="text-[15px] font-medium text-black">Min</p>
-                <div id="bg-date" class="w-10 h-10 rounded-full relative mt-1">
-                    <p id="date" class="text-[15px] font-medium text-black absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">13</p>
-                </div>
-            </button>
-            <button class="flex flex-col items-center mt-2">
-                <p id="day" class="text-[15px] font-medium text-black">Sen</p>
-                <div id="bg-date" class="w-10 h-10 rounded-full relative mt-1">
-                    <p id="date" class="text-[15px] font-medium text-black absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">14</p>
-                </div>
-            </button>
+        <div id="calendarSlides" class="mt-2">
         </div>
     </div>
 </div>
 
-<script async>
-    const monthNames = [
-        "Januari", "Februari", "Maret", "April", "Mei", "Juni",
-        "Juli", "Agustus", "September", "Oktober", "November", "Desember"
-    ];
-
-    const select = document.getElementById('monthSelect');
-    const currentDate = new Date();
-
-    for (let i = 0; i < 5; i++) {
-        let futureDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + i, 1);
-        let month = monthNames[futureDate.getMonth()];
-        let year = futureDate.getFullYear();
-        let option = document.createElement('option');
-        option.value = month.toLowerCase() + '-' + year;
-        option.text = `${month} ${year}`;
-        select.appendChild(option);
-    }
+<script>
+    window.isCalendarForWorkSchedule = true;
 </script>

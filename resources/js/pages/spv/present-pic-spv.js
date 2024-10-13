@@ -1,97 +1,38 @@
-import { formatDate, getDate, getDateFormat2, getDay } from '../../utils/date.js';
+import { formatDate, getDateFormat2 } from '../../utils/date.js';
 
-const workOrdersClientPage = {
-    getWorkOrders : async () => {
-        if(window.isWorkOrdersClient) {
+const presentPICSPVPage = {
+    getPICAttendances : async () => {
+        if(window.isPresentPICSPVPage) {
             try {
-                const module = await import('../../fetch/clientJS.js')
+                const module = await import('../../fetch/spvJS.js');
 
                 const currentUrl = new URL(window.location.href);
                 const params = currentUrl.searchParams;
 
-                const filterElements = document.querySelectorAll('[id^="filter-"]');
-                const inputFilterStartWork = document.getElementById('input-start_work');
-                const inputFilterEndWork = document.getElementById('input-end_work');
-                const containerWorkOrders = document.getElementById('tbody-container');
-                const btnSaveDateFilter = document.getElementById('btn-save-date-filter');
+                const containerAttedances = document.getElementById('tbody-container');
 
-                const valueFilter = params.get('filter') || 'semua';
-
-                filterElements.forEach((element) => {
-                    element.classList.remove('bg-orange-30', 'text-white');
-
-                    const elementFilterText = element.textContent.replace(/\s+/g, '-').toLowerCase();
-                    if (elementFilterText === valueFilter) {
-                        element.classList.add('bg-orange-30', 'text-white', 'border-orange-30');
-                    }
-
-                    element.addEventListener('click', (event) => {
-                        filterElements.forEach(el => {
-                            el.classList.remove('bg-orange-30', 'text-white');
-                        });
-                        
-                        const filterDate = params.get('date');
-                        const filterDay = params.get('day');
-
-                        const clickedElement = event.currentTarget;
-                        const filter = clickedElement.dataset.value;
-
-                        if (filter) {
-                            params.set('filter', filter);
-                        }
-                        updateData({filter, filterDate, filterDay})
-                        clickedElement.classList.add('border-orange-30', 'bg-orange-30', 'text-white');
-
-                        window.history.replaceState({}, '', currentUrl.toString());
-                    });
-                });
-
-                btnSaveDateFilter.addEventListener('click', (event) => {
-                    const filter = params.get('filter');
-                    const filterDay = params.get('day');
-
-                    const start = inputFilterStartWork.value;
-                    const end = inputFilterEndWork.value;
-
-                    if (start && end) {
-                        params.set('date', `${start}...${end}`);
-
-                        updateData({filter, filterDate : `${start}...${end}`, filterDay})
-                        window.history.replaceState({}, '', currentUrl.toString());
-
-                        modalCalender.classList.add('hidden')
-                        mainCalender.classList.add('translate-x-full')
-                    } else {
-                        console.log('Both start and end dates must be provided.');
-                    }
-                });
-
-                const result = await module.getWorkOrders({
-                    filter : params.get('filter'), 
-                    filterDate : params.get('date'), 
-                    filterDay: params.get('day') ? params.get('day') : getDateFormat2()
-                });
-
+                const result = await module.getPICAttedances({day : params.get('day') ? params.get('day') : getDateFormat2()});
+                
                 if(result.status_code === 201) {
                     const data = result.data;
                     
-                    data.work_orders.forEach(work_order => {
-                        containerWorkOrders.innerHTML += `
+                    data.attendances.forEach(attendance => {
+                        containerAttedances.innerHTML += `
                         <tr>
                             <td class="text-center font-semibold text-grey text-sm pt-6 w-16">
-                                <button onclick="window.location.href='/approval-manager/${work_order.id}'">
+                                <button>
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect width="24" height="24" rx="12" fill="#00BF63" />
                                         <path d="M14.0588 6.74568L16.5294 9.15732M12.4118 18H19M5.82353 14.7845L5 18L8.29412 17.1961L17.8355 7.88237C18.1443 7.58087 18.3178 7.172 18.3178 6.74568C18.3178 6.31936 18.1443 5.9105 17.8355 5.609L17.6939 5.47073C17.385 5.16932 16.9662 5 16.5294 5C16.0927 5 15.6738 5.16932 15.3649 5.47073L5.82353 14.7845Z" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </button>
                             </td>
-                            <td class="text-center font-semibold text-grey text-sm pt-6 min-w-32 max-w-44">${work_order.name}</td>
-                            <td class="text-center font-semibold text-grey text-sm pt-6 min-w-32 max-w-44">${formatDate(work_order.created_at)}</td>
-                            <td class="text-center font-semibold text-grey text-sm pt-6 min-w-32 max-w-44">${formatDate(work_order.start_work)}</td>
-                            <td class="text-center font-semibold text-grey text-sm pt-6 min-w-32 max-w-44">${formatDate(work_order.end_work)}</td>
+                            <td class="text-center font-semibold text-grey text-sm pt-6 min-w-32 max-w-44">${attendance.full_name}</td>
+                            <td class="text-center font-semibold text-grey text-sm pt-6 min-w-32 max-w-44">${formatDate(attendance.start_attedance)}</td>
+                            <td class="text-center font-semibold text-grey text-sm pt-6 min-w-32 max-w-44">${attendance.end_attedance ? formatDate(attendance.end_attedance) : 'Tidak tersedia'}</td>
+                            <td class="text-center font-semibold text-grey text-sm pt-6 min-w-32 max-w-44">${attendance.status}</td>
                         </tr>`
-                    })
+                    });
                     
                 }else {
                     const errors = result.errors;
@@ -111,36 +52,36 @@ const workOrdersClientPage = {
 
 const updateData = async (filters) => {
     try {
-        const { filter, filterDate, filterDay } = filters;
+        const { day } = filters;
 
-        const module = await import('../../fetch/clientJS.js')
-        const containerWorkOrders = document.getElementById('tbody-container');
+        const module = await import('../../fetch/spvJS.js')
+        const containerAttedances = document.getElementById('tbody-container');
 
-        const result = await module.getWorkOrders({filter, filterDate, filterDay});
-
-
+        const result = await module.getPICAttedances({day});
+        
         if(result.status_code === 201) {
             const data = result.data;
+            
+            containerAttedances.innerHTML = ``;
 
-            containerWorkOrders.innerHTML = ``;
-
-            data.work_orders.forEach(work_order => {
-                containerWorkOrders.innerHTML += `
+            data.attendances.forEach(attendance => {
+                containerAttedances.innerHTML += `
                 <tr>
                     <td class="text-center font-semibold text-grey text-sm pt-6 w-16">
-                        <button onclick="window.location.href='/approval-manager/${work_order.id}'">
+                        <button>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="24" height="24" rx="12" fill="#00BF63" />
                                 <path d="M14.0588 6.74568L16.5294 9.15732M12.4118 18H19M5.82353 14.7845L5 18L8.29412 17.1961L17.8355 7.88237C18.1443 7.58087 18.3178 7.172 18.3178 6.74568C18.3178 6.31936 18.1443 5.9105 17.8355 5.609L17.6939 5.47073C17.385 5.16932 16.9662 5 16.5294 5C16.0927 5 15.6738 5.16932 15.3649 5.47073L5.82353 14.7845Z" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </button>
                     </td>
-                    <td class="text-center font-semibold text-grey text-sm pt-6 min-w-32 max-w-44">${work_order.name}</td>
-                    <td class="text-center font-semibold text-grey text-sm pt-6 min-w-32 max-w-44">${formatDate(work_order.created_at)}</td>
-                    <td class="text-center font-semibold text-grey text-sm pt-6 min-w-32 max-w-44">${formatDate(work_order.start_work)}</td>
-                    <td class="text-center font-semibold text-grey text-sm pt-6 min-w-32 max-w-44">${formatDate(work_order.end_work)}</td>
+                    <td class="text-center font-semibold text-grey text-sm pt-6 min-w-32 max-w-44">${attendance.full_name}</td>
+                    <td class="text-center font-semibold text-grey text-sm pt-6 min-w-32 max-w-44">${formatDate(attendance.start_attedance)}</td>
+                    <td class="text-center font-semibold text-grey text-sm pt-6 min-w-32 max-w-44">${attendance.end_attedance ? formatDate(attendance.end_attedance) : 'Tidak tersedia'}</td>
+                    <td class="text-center font-semibold text-grey text-sm pt-6 min-w-32 max-w-44">${attendance.status}</td>
                 </tr>`
-            })
+            });
+            
         }else {
             const errors = result.errors;
             
@@ -156,7 +97,7 @@ const updateData = async (filters) => {
 }
 
 const calenderFeature = () => {
-    if(window.isCalendarForWorkOrderClient) {
+    if(window.isCalendarForPICAttendancesSPV) {
         const nextCalendar = document.getElementById('next-calendar');
         const prevCalendar = document.getElementById('prev-calendar');
 
@@ -294,9 +235,6 @@ const calenderFeature = () => {
             const currentUrl = new URL(window.location.href);
             const params = currentUrl.searchParams;
             
-            const filterDate = params.get('date');
-            const filter = params.get('filter');
-
             selectedDate = date;
 
             // Format the selected date to YYYY-MM-DD
@@ -307,7 +245,7 @@ const calenderFeature = () => {
         
             params.set('day', `${year}-${month}-${day}`)
 
-            updateData({filter, filterDate, filterDay: `${year}-${month}-${day}`})
+            updateData({day : `${year}-${month}-${day}`})
 
             window.history.replaceState({}, '', currentUrl.toString());
         
@@ -366,4 +304,4 @@ const calenderFeature = () => {
 
 calenderFeature();
 
-export default workOrdersClientPage;
+export default presentPICSPVPage;

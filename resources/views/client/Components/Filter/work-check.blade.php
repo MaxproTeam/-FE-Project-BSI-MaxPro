@@ -20,17 +20,9 @@
         </svg>
     </button>
 
-    <button class="border-[1px] border-orange-30 bg-orange-30 text-white py-1.5 px-3 rounded-2xl text-xs">
-        Semua
-    </button>
-
-    <button class="border-[1px] border-orange-30 py-1.5 px-3 rounded-2xl text-xs">
-        Belum diperiksa
-    </button>
-
-    <button class="border-[1px] border-orange-30 py-1.5 px-3 rounded-2xl text-xs">
-        Sudah diperiksa
-    </button>
+    <button id="filter-semua" data-value="semua" class="border-[1px] border-orange-30 py-1.5 px-3 rounded-2xl text-xs">Semua</button>
+    <button id="filter-belum-diperiksa" data-value="belum-diperiksa" class="border-[1px] border-orange-30 py-1.5 px-3 rounded-2xl text-xs">Belum diperiksa</button>
+    <button id="filter-sudah-diperiksa" data-value="sudah-diperiksa" class="border-[1px] border-orange-30 py-1.5 px-3 rounded-2xl text-xs">Sudah diperiksa</button>
 </div>
 
 <div class="fixed top-0 left-0 z-40">
@@ -38,15 +30,15 @@
         <div onclick="closeCalender()" id="overlay-calender" class="h-screen w-screen bg-black opacity-15"></div>
         <div id="main-calender" class="absolute px-4 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-white h-[50vh] w-full max-w-[300px] rounded-xl py-7 duration-500" style="box-shadow:-10px 4px 22.7px 0px #00000040;">
             <p class="text-black text-lg font-bold">Pilih rentang waktu</p>
-            <form action="" class="mt-6">
+            <div class="mt-6">
                 <p class="text-black text-sm font-semibold">Tanggal dimulai</p>
-                <input type="date" class="border-2 border-gray-200 px-5 py-2.5 w-full mt-3">
+                <input id="input-start_work" type="date" class="border-2 border-gray-200 px-5 py-2.5 w-full mt-3">
                 <p class="text-black text-sm font-semibold mt-6">Tanggal selesai</p>
-                <input type="date" class="border-2 border-gray-200 px-5 py-2.5 w-full mt-3">
-                <button class="bg-green-10 w-full rounded-2xl h-[70px] mt-16 font-semibold text-white lg:hover:bg-green-700 sm:active:bg-gray-700 active:scale-95 transition-all duration-100 ease-in-out">
+                <input id="input-end_work" type="date" class="border-2 border-gray-200 px-5 py-2.5 w-full mt-3">
+                <button id="btn-save-date-filter" class="bg-green-10 w-full rounded-2xl h-[70px] mt-16 font-semibold text-white lg:hover:bg-green-700 sm:active:bg-gray-700 active:scale-95 transition-all duration-100 ease-in-out">
                     Simpan
                 </button>
-            </form>
+            </div>
         </div>
     </div>
 </div>

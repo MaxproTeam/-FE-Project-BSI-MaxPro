@@ -20,6 +20,16 @@ const getDate = (date, locale = 'id-ID', options = {}) => {
     return `${day}/${month}/${year}`;
 }
 
+const getDateFormat2 = (locale = 'id-ID', options = {}) => {
+    const dateObject = new Date();
+
+    const day = String(dateObject.getDate()).padStart(2, '0');
+    const month = String(dateObject.getMonth() + 1).padStart(2, '0'); 
+    const year = dateObject.getFullYear();
+
+    return `${year}-${month}-${day}`;
+}
+
 const getHours = (date, locale = 'id-ID', options = {}) => {
     const dateObject = new Date(date);
 
@@ -39,4 +49,4 @@ const getDay = (date, locale = 'id-ID', options = {}) => {
 }
 
 
-export {formatDate, getDate, getHours, getDay};
+export {formatDate, getDate, getDateFormat2, getHours, getDay};

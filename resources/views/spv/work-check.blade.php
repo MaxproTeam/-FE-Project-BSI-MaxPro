@@ -14,6 +14,10 @@
 </div>
 
 <script>
+    window.isWorkOrderCheckSPV = {{ Request::is('work-check-spv/*') ? true : false }};
+</script>
+
+<script>
     document.getElementById('sidebar-work-checklist-spv').classList.add('text-black', 'font-semibold', 'bg-green-30', 'bg-opacity-20')
     document.getElementById('sidebar-work-checklist-spv').classList.remove('text-grey')
     document.getElementById('sidebar-spv').classList.remove('hidden')
