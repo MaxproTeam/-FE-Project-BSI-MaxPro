@@ -2,7 +2,8 @@ const getCompanies = async (data) => {
     try {
       const response = await axios.get('https://88fc-2001-448a-2020-5ace-e0e6-d412-2525-a3f4.ngrok-free.app/api/v1/manager/companies', {
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'x-requested-with': 'XMLHttpRequest'
         },
         withCredentials: true,
         params: data
@@ -20,7 +21,8 @@ const getCompanies = async (data) => {
     try {
       const response = await axios.get(`https://88fc-2001-448a-2020-5ace-e0e6-d412-2525-a3f4.ngrok-free.app/api/v1/manager/companies/${data.id}`, {
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'x-requested-with': 'XMLHttpRequest'
         },
         withCredentials: true
       });
@@ -37,7 +39,8 @@ const getCompanies = async (data) => {
     try {
       const response = await axios.get(`https://88fc-2001-448a-2020-5ace-e0e6-d412-2525-a3f4.ngrok-free.app/api/v1/manager/company/pic-attendances/${data.id}`, {
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'x-requested-with': 'XMLHttpRequest'
         },
         withCredentials: true,
         params: { day: data.day }
@@ -55,7 +58,8 @@ const getCompanies = async (data) => {
     try {
       const response = await axios.get(`https://88fc-2001-448a-2020-5ace-e0e6-d412-2525-a3f4.ngrok-free.app/api/v1/manager/company/work-orders/${data.id}`, {
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'x-requested-with': 'XMLHttpRequest'
         },
         withCredentials: true,
         params: { day: data.day }
@@ -73,7 +77,8 @@ const getCompanies = async (data) => {
     try {
       const response = await axios.get(`https://88fc-2001-448a-2020-5ace-e0e6-d412-2525-a3f4.ngrok-free.app/api/v1/manager/work-orders`, {
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'x-requested-with': 'XMLHttpRequest'
         },
         withCredentials: true,
         params: data
@@ -91,7 +96,8 @@ const getCompanies = async (data) => {
     try {
       const response = await axios.get(`https://88fc-2001-448a-2020-5ace-e0e6-d412-2525-a3f4.ngrok-free.app/api/v1/manager/work-orders/${id}`, {
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'x-requested-with': 'XMLHttpRequest'
         },
         withCredentials: true
       });
@@ -108,7 +114,8 @@ const getCompanies = async (data) => {
     try {
       const response = await axios.put(`https://88fc-2001-448a-2020-5ace-e0e6-d412-2525-a3f4.ngrok-free.app/api/v1/manager/work-orders`, data, {
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'x-requested-with': 'XMLHttpRequest'
         },
         withCredentials: true
       });
