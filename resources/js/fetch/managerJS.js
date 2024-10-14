@@ -1,6 +1,6 @@
 const getCompanies = async (data) => {
     try {
-      const response = await axios.get('https://700b-2001-448a-2020-5ace-e0e6-d412-2525-a3f4.ngrok-free.app/api/v1/manager/companies', {
+      const response = await axios.get(' https://9f0d-2001-448a-2020-5ace-e0e6-d412-2525-a3f4.ngrok-free.app/api/v1/manager/companies', {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
           'x-requested-with': 'XMLHttpRequest'
@@ -19,7 +19,7 @@ const getCompanies = async (data) => {
 
   const getCompaniesById = async (data) => {
     try {
-      const response = await axios.get(`https://700b-2001-448a-2020-5ace-e0e6-d412-2525-a3f4.ngrok-free.app/api/v1/manager/companies/${data.id}`, {
+      const response = await axios.get(` https://9f0d-2001-448a-2020-5ace-e0e6-d412-2525-a3f4.ngrok-free.app/api/v1/manager/companies/${data.id}`, {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
           'x-requested-with': 'XMLHttpRequest'
@@ -37,7 +37,7 @@ const getCompanies = async (data) => {
 
   const getPICAttedancesCompany = async (data) => {
     try {
-      const response = await axios.get(`https://700b-2001-448a-2020-5ace-e0e6-d412-2525-a3f4.ngrok-free.app/api/v1/manager/company/pic-attendances/${data.id}`, {
+      const response = await axios.get(` https://9f0d-2001-448a-2020-5ace-e0e6-d412-2525-a3f4.ngrok-free.app/api/v1/manager/company/pic-attendances/${data.id}`, {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
           'x-requested-with': 'XMLHttpRequest'
@@ -56,7 +56,7 @@ const getCompanies = async (data) => {
 
   const getWorkOrdersCompany = async (data) => {
     try {
-      const response = await axios.get(`https://700b-2001-448a-2020-5ace-e0e6-d412-2525-a3f4.ngrok-free.app/api/v1/manager/company/work-orders/${data.id}`, {
+      const response = await axios.get(` https://9f0d-2001-448a-2020-5ace-e0e6-d412-2525-a3f4.ngrok-free.app/api/v1/manager/company/work-orders/${data.id}`, {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
           'x-requested-with': 'XMLHttpRequest'
@@ -75,7 +75,7 @@ const getCompanies = async (data) => {
 
   const getWorkOrders = async (data) => {
     try {
-      const response = await axios.get(`https://700b-2001-448a-2020-5ace-e0e6-d412-2525-a3f4.ngrok-free.app/api/v1/manager/work-orders`, {
+      const response = await axios.get(` https://9f0d-2001-448a-2020-5ace-e0e6-d412-2525-a3f4.ngrok-free.app/api/v1/manager/work-orders`, {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
           'x-requested-with': 'XMLHttpRequest'
@@ -94,7 +94,7 @@ const getCompanies = async (data) => {
 
   const getWorkOrderById = async (id) => {
     try {
-      const response = await axios.get(`https://700b-2001-448a-2020-5ace-e0e6-d412-2525-a3f4.ngrok-free.app/api/v1/manager/work-orders/${id}`, {
+      const response = await axios.get(` https://9f0d-2001-448a-2020-5ace-e0e6-d412-2525-a3f4.ngrok-free.app/api/v1/manager/work-orders/${id}`, {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
           'x-requested-with': 'XMLHttpRequest'
@@ -112,7 +112,7 @@ const getCompanies = async (data) => {
 
   const approveWorkOrder = async (data) => {
     try {
-      const response = await axios.put(`https://700b-2001-448a-2020-5ace-e0e6-d412-2525-a3f4.ngrok-free.app/api/v1/manager/work-orders`, data, {
+      const response = await axios.put(` https://9f0d-2001-448a-2020-5ace-e0e6-d412-2525-a3f4.ngrok-free.app/api/v1/manager/work-orders`, data, {
         headers: {
           'Content-Type': 'application/json',
           'x-requested-with': 'XMLHttpRequest'
