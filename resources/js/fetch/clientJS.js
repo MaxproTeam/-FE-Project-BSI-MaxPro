@@ -5,6 +5,7 @@ const getPICAttedances = async (data) => {
     const response = await axios.get(` https://9f0d-2001-448a-2020-5ace-e0e6-d412-2525-a3f4.ngrok-free.app/api/v1/client/pic-attendances`, {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
+        'Access-Control-Allow-Origin' : '*',
         'x-requested-with': 'XMLHttpRequest'
       },
       withCredentials: true,
