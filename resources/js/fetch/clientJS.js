@@ -4,7 +4,8 @@ const getPICAttedances = async (data) => {
   try {
     const response = await axios.get(`https://88fc-2001-448a-2020-5ace-e0e6-d412-2525-a3f4.ngrok-free.app/api/v1/client/pic-attendances`, {
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'x-requested-with': 'XMLHttpRequest'
       },
       withCredentials: true,
       params: data,
@@ -22,7 +23,8 @@ const getSPVAttedances = async (data) => {
   try {
     const response = await axios.get(`https://88fc-2001-448a-2020-5ace-e0e6-d412-2525-a3f4.ngrok-free.app/api/v1/client/spv-attendances`, {
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'x-requested-with': 'XMLHttpRequest'
       },
       withCredentials: true,
       params: data
@@ -40,7 +42,8 @@ const getWorkOrders = async (data) => {
   try {
     const response = await axios.get(`https://88fc-2001-448a-2020-5ace-e0e6-d412-2525-a3f4.ngrok-free.app/api/v1/client/work-orders`, {
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'x-requested-with': 'XMLHttpRequest'
       },
       withCredentials: true,
       params: data
@@ -58,7 +61,8 @@ const setWorkOrder = async (data) => {
   try {
     const response = await axios.post('https://88fc-2001-448a-2020-5ace-e0e6-d412-2525-a3f4.ngrok-free.app/api/v1/client/work-orders', data, {
     headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'x-requested-with': 'XMLHttpRequest'
       },
       withCredentials: true
     });
