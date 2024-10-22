@@ -1,14 +1,33 @@
-import { formatDate } from '../../utils/date.js';
+import { formatDate, getDateFormat2 } from '../../utils/date.js';
 
 const presentSPVPage = {
     setAttendance : async () => {
         if(window.isPresentSPVPage) {
             try {
-                const module = await import('../../fetch/spvJS.js')
+                const module = await import('../../fetch/spvJS.js');
+
+                const dataAttedances = await module.getSPVAttendance({day : getDateFormat2()});
+
+                const currentDate = new Date();
+                const hours = currentDate.getHours();
+
                 const btnUserAttedance = document.getElementById('btn-attedance');
                 const tbodyPresent = document.getElementById('tbody-present');
 
+                if(dataAttedances.data.attendances.length > 0) {
+                    btnUserAttedance.textContent = "Absen Pulang";
+                    
+                    if (hours < 17) {
+                        btnUserAttedance.classList.add('bg-grey');
+                        btnUserAttedance.disabled = true;
+                    } else {
+                        btnUserAttedance.classList.add('bg-green-10');
+                        btnUserAttedance.disabled = false;
+                    }
+                }
+
                 btnUserAttedance.addEventListener('click', async (event) => {
+                    const attedance = hours < 17 ? 'Hadir' : 'Pulang';
                     let latitude, longitude;
 
                     if ("geolocation" in navigator) {
@@ -29,13 +48,18 @@ const presentSPVPage = {
                         console.error("Geolocation is not available");
                     }
 
-                    const result = await module.setSPVAttendance({ attedance : 'Hadir', latitude, longitude });
+                    const result = await module.setSPVAttendance({ attedance, latitude, longitude });
 
                     if (result.status_code === 201) {
                         const data = result.data;
                         const startAttedance = formatDate(data.attendance.start_attedance);
                         const endAttedance = data.attendance.end_attedance ? formatDate(data.attendance.end_attedance) : 'Tidak tersedia';
                         const status = data.attendance.status 
+
+                        btnUserAttedance.textContent = "Absen Pulang";
+
+                        btnUserAttedance.classList.add('bg-grey');
+                        btnUserAttedance.disabled = true;
 
                         tbodyPresent.innerHTML += `
                         <tr>

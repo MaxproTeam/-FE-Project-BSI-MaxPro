@@ -116,7 +116,7 @@ const updateData = async (filters) => {
         const module = await import('../../fetch/clientJS.js')
         const containerWorkOrders = document.getElementById('tbody-container');
 
-        const result = await module.getWorkOrders({filter, filterDate, filterDay});
+        const result = await module.getWorkOrders({filter, filterDate, filterDay : filterDay ? filterDay : getDateFormat2()});
 
 
         if(result.status_code === 201) {

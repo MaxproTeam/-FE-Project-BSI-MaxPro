@@ -145,7 +145,7 @@ const updateDataPICAttedances = async (filters) => {
 
         const tbodyAttendanceContainer = document.getElementById('tbody-attendance-container');
 
-        const result = await module.getPICAttedancesCompany({id: parseInt(id), day: filterDay});
+        const result = await module.getPICAttedancesCompany({id: parseInt(id), day: filterDay ? filterDay : getDateFormat2()});
 
         if(result.status_code === 201) {
             const data = result.data;
@@ -196,7 +196,7 @@ const updateDataWorkOrders = async (filters) => {
 
         const tbodyWorkOrderContainer = document.getElementById('tbody-work-order-container');
 
-        const result = await module.getWorkOrdersCompany({id: parseInt(id), day: filterDay});
+        const result = await module.getWorkOrdersCompany({id: parseInt(id), day: filterDay ? filterDay : getDateFormat2()});
 
         if(result.status_code === 201) {
             const data = result.data;

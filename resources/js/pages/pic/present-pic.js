@@ -1,14 +1,33 @@
-import { formatDate } from '../../utils/date.js';
+import { formatDate, getDateFormat2 } from '../../utils/date.js';
 
 const presentPICPage = {
     setAttendance : async () => {
         if(window.isPresentPICPage) {
             try {
-                const module = await import('../../fetch/picJS.js')
+                const module = await import('../../fetch/picJS.js');
+
+                const dataAttedances = await module.getPICAttendance({day : getDateFormat2()});
+
+                const currentDate = new Date();
+                const hours = currentDate.getHours();
+
                 const btnUserAttedance = document.getElementById('btn-attedance');
                 const tbodyPresent = document.getElementById('tbody-present');
 
+                if(dataAttedances.data.attendances.length > 0) {
+                    btnUserAttedance.textContent = "Absen Pulang";
+                    
+                    if (hours < 17) {
+                        btnUserAttedance.classList.add('bg-grey');
+                        btnUserAttedance.disabled = true;
+                    } else {
+                        btnUserAttedance.classList.add('bg-green-10');
+                        btnUserAttedance.disabled = false;
+                    }
+                }
+
                 btnUserAttedance.addEventListener('click', async (event) => {
+                    const attedance = hours < 17 ? 'Hadir' : 'Pulang';
                     let latitude, longitude;
 
                     if ("geolocation" in navigator) {
@@ -29,20 +48,29 @@ const presentPICPage = {
                         console.error("Geolocation is not available");
                     }
 
-                    const result = await module.setPICAttendance({ attedance : 'Hadir', latitude, longitude });
+                    const result = await module.setPICAttendance({ attedance, latitude, longitude });
 
                     if (result.status_code === 201) {
                         const data = result.data;
-                        const startAttedance = formatDate(data.attendance.start_attedance);
+                        const startAttedance = data.attendance.start_attedance ? formatDate(data.attendance.start_attedance) : 'Tidak tersedia';
                         const endAttedance = data.attendance.end_attedance ? formatDate(data.attendance.end_attedance) : 'Tidak tersedia';
-                        const status = data.attendance.status 
+                        const status = data.attendance.status ?  data.attendance.status : null;
 
-                        tbodyPresent.innerHTML += `
-                        <tr>
-                            <td class="text-center font-semibold text-grey text-sm pt-6">${startAttedance}</td>
-                            <td class="text-center font-semibold text-grey text-sm pt-6">${endAttedance}</td>
-                            <td class="text-center font-semibold text-grey text-sm pt-6">${status}</td>
-                        </tr>`;
+                        if(Object.keys(data.attendance).length === 0) {
+                            window.location.reload();
+                        }else {
+                            btnUserAttedance.textContent = "Absen Pulang";
+
+                            btnUserAttedance.classList.add('bg-grey');
+                            btnUserAttedance.disabled = true;
+    
+                            tbodyPresent.innerHTML += `
+                            <tr>
+                                <td class="text-center font-semibold text-grey text-sm pt-6">${startAttedance}</td>
+                                <td class="text-center font-semibold text-grey text-sm pt-6">${endAttedance}</td>
+                                <td class="text-center font-semibold text-grey text-sm pt-6">${status}</td>
+                            </tr>`;
+                        }
                     } else {
                         const errors = result.errors;
     

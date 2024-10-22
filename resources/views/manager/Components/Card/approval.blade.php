@@ -18,6 +18,7 @@
     <p id="wo-notes" class="font-medium text-xl text-grey mt-2"></p>
 
     <p class="font-semibold text-xl text-black mt-3">Approval</p>
+    <p id="wo-status" class="font-medium text-xl text-grey mt-2 hidden"></p>
     <select name = "approve-select" class="custom-select text-black text-[15px] pr-4 w-full text-xl py-2.5 px-2 bg-white drop-shadow-2xl rounded-lg mt-6">
         <option disabled selected value="">Status</option>
         <option value="Approved">Approve</option>

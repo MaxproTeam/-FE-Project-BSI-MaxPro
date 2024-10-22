@@ -1,3 +1,5 @@
+import { getDateFormat2 } from '../../utils/date.js';
+
 const dashboardPICPage = {
     getAccount: () => {
         if(window.isDashboardPIC) {
@@ -18,9 +20,28 @@ const dashboardPICPage = {
         if(window.isDashboardPIC) {
             try {
                 const module = await import('../../fetch/picJS.js')
+
+                const dataAttedances = await module.getPICAttendance({day : getDateFormat2()});
+
+                const currentDate = new Date();
+                const hours = currentDate.getHours();
+
                 const btnUserAttedance = document.getElementById('btn-attedance');
+
+                if(dataAttedances.data.attendances.length > 0) {
+                    btnUserAttedance.textContent = "Absen Pulang";
+                    
+                    if (hours < 17) {
+                        btnUserAttedance.classList.add('bg-grey');
+                        btnUserAttedance.disabled = true;
+                    } else {
+                        btnUserAttedance.classList.add('bg-green-10');
+                        btnUserAttedance.disabled = false;
+                    }
+                }
                 
                 btnUserAttedance.addEventListener('click', async (event) => {
+                    const attedance = hours < 17 ? 'Hadir' : 'Pulang';
                     let latitude, longitude;
 
                     if ("geolocation" in navigator) {
@@ -41,11 +62,9 @@ const dashboardPICPage = {
                         console.error("Geolocation is not available");
                     }
 
-                    const result = await module.setPICAttendance({ attedance : 'Hadir', latitude, longitude });
+                    const result = await module.setPICAttendance({ attedance, latitude, longitude });
 
-                    if (result.status_code === 201) {
-                        const data = result.data;
-                        
+                    if (result.status_code === 201) {                        
                         window.location.reload();
                     } else {
                         const errors = result.errors;
@@ -91,7 +110,7 @@ const dashboardPICPage = {
                         <div class="bg-white p-3 rounded-xl drop-shadow-lg flex items-center justify-between">
                             <div>
                                 <p class="poppins bg-orange-30 text-white font-medium text-xs uppercase px-1.5 py-0.5 tracking-[0.1rem] rounded-md w-fit">JANITOR</p>
-                                <p class="poppins text-black font-medium text-base mt-4">${work_order.name}</p>
+                                <p onclick= "window.location.href='/approval-manager/${work_order.id}'" class="poppins cursor-pointer text-black font-medium text-base mt-4">${work_order.name}</p>
                                 <p class="poppins text-[#1E1E1E] text-opacity-80 font-medium text-xs mt-4">Supervisor : ${supervisor(work_order.company_id)}</p>
                             </div>
                             <button data-index="${index}" data-work_order="${work_order.id}" class="btn-done-work-order bg-green-10 text-white w-[147px] h-10 text-sm rounded-2xl font-bold sm:active:bg-gray-700 active:scale-95 transition-all duration-100 ease-in-out">Tandai Selesai</button>

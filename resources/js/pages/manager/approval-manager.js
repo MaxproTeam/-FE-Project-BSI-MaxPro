@@ -21,7 +21,7 @@ const approvalManagerPage = {
                 const woEnd = document.getElementById('wo-end');
                 const woDescription = document.getElementById('wo-description');
                 const woNotes = document.getElementById('wo-notes');
-                const approveSelect = document.querySelector('select[name="approve-select"] option:checked');
+                const approveSelect = document.querySelector('select[name="approve-select"]');
                 const btnSaveApprove = document.getElementById('btn-save-approve-work-order');
 
                 const result = await module.getWorkOrderById(id);
@@ -42,11 +42,19 @@ const approvalManagerPage = {
                     woNotes.textContent = data.work_order.notes ? data.work_order.notes : 'Tidak ada catatan.';
                     
                     if(user.role !== 'Manager') {
+                        document.querySelector(`select[name="approve-select"]`).classList.add('hidden')
+                        document.getElementById(`wo-status`).classList.remove('hidden')
+
+                        document.getElementById(`wo-status`).textContent= data.work_order.status;
+
                         btnSaveApprove.classList.add('hidden');
                     }
                     
                     if(data.work_order.status === 'Approved' || data.work_order.status === 'In Review'){
-                        document.querySelector(`select[name="approve-select"] option[value='Approved']`).selected = true;
+                        document.querySelector(`select[name="approve-select"]`).classList.add('hidden')
+                        document.getElementById(`wo-status`).classList.remove('hidden')
+                        
+                        document.getElementById(`wo-status`).textContent= data.work_order.status;
                         
                         btnSaveApprove.classList.add('hidden');
                     }
@@ -69,9 +77,7 @@ const approvalManagerPage = {
                         } catch (err) {
                             console.log(err.message)   
                         }
-                        
                     });
-                
                 }else {
                     const errors = result.errors;
                     

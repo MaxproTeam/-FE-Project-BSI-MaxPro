@@ -1,4 +1,5 @@
-import { getDate, getDay } from '../../utils/date.js';
+import { data } from 'autoprefixer';
+import { getDate, getDateFormat2, getDay } from '../../utils/date.js';
 
 const dashboardSPVPage = {
     getAccount: () => {
@@ -19,10 +20,29 @@ const dashboardSPVPage = {
     setAttendance : async () => {
         if(window.isDashboardSPV) {
             try {
-                const module = await import('../../fetch/spvJS.js')
+                const module = await import('../../fetch/spvJS.js');
+
+                const dataAttedances = await module.getSPVAttendance({day : getDateFormat2()});
+
+                const currentDate = new Date();
+                const hours = currentDate.getHours();
+
                 const btnUserAttedance = document.getElementById('btn-attedance');
+                
+                if(dataAttedances.data.attendances.length > 0) {
+                    btnUserAttedance.textContent = "Absen Pulang";
+                    
+                    if (hours < 17) {
+                        btnUserAttedance.classList.add('bg-grey');
+                        btnUserAttedance.disabled = true;
+                    } else {
+                        btnUserAttedance.classList.add('bg-green-10');
+                        btnUserAttedance.disabled = false;
+                    }
+                }
 
                 btnUserAttedance.addEventListener('click', async (event) => {
+                    const attedance = hours < 17 ? 'Hadir' : 'Pulang';
                     let latitude, longitude;
 
                     if ("geolocation" in navigator) {
@@ -43,7 +63,7 @@ const dashboardSPVPage = {
                         console.error("Geolocation is not available");
                     }
 
-                    const result = await module.setSPVAttendance({ attedance : 'Hadir', latitude, longitude });
+                    const result = await module.setSPVAttendance({ attedance, latitude, longitude });
 
                     if (result.status_code === 201) {
                         const data = result.data;

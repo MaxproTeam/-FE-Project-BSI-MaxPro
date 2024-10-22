@@ -36,12 +36,20 @@
 
   const setSPVAttendance = async (data) => {
     try {
-      const response = await axios.post('http://localhost:3000/api/v1/spv/attedances', data, {
+      const currentDate = new Date();
+      const hours = currentDate.getHours();
+
+      const response = hours < 17 ? await axios.post('http://localhost:3000/api/v1/spv/attedances', data, {
       headers: {
           'Content-Type': 'application/json'
         },
         withCredentials: true
-      });
+      }) : await axios.put('http://localhost:3000/api/v1/spv/attedances', data, {
+      headers: {
+          'Content-Type': 'application/json'
+        },
+        withCredentials: true
+      })
       return response.data;
     } catch (err) {
       if (err.response) {
