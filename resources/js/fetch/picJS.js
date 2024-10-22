@@ -1,6 +1,6 @@
 const getPICAttendance = async (data) => {
     try {
-      const response = await axios.get('http://localhost:3000/api/v1/pic/attedances', {
+      const response = await axios.get('https://rockesroll.id/backend/api/v1/pic/attedances', {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         },
@@ -21,12 +21,12 @@ const getPICAttendance = async (data) => {
       const currentDate = new Date();
       const hours = currentDate.getHours();
 
-      const response = hours < 17 ? await axios.post('http://localhost:3000/api/v1/pic/attedances', data, {
+      const response = hours < 17 ? await axios.post('https://rockesroll.id/backend/api/v1/pic/attedances', data, {
       headers: {
           'Content-Type': 'application/json'
         },
         withCredentials: true
-      }) : await axios.put('http://localhost:3000/api/v1/pic/attedances', data, {
+      }) : await axios.put('https://rockesroll.id/backend/api/v1/pic/attedances', data, {
       headers: {
           'Content-Type': 'application/json'
         },
@@ -43,7 +43,7 @@ const getPICAttendance = async (data) => {
 
   const getWorkOrders = async (data) => {
     try {
-      const response = await axios.get(`http://localhost:3000/api/v1/pic/work-orders`, {
+      const response = await axios.get(`https://rockesroll.id/backend/api/v1/pic/work-orders`, {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         },
@@ -61,7 +61,7 @@ const getPICAttendance = async (data) => {
 
   const doneWorkOrder = async (data) => {
     try {
-      const response = await axios.put(`http://localhost:3000/api/v1/pic/work-orders`, data, {
+      const response = await axios.put(`https://rockesroll.id/backend/api/v1/pic/work-orders`, data, {
       headers: {
           'Content-Type': 'application/json'
         },
