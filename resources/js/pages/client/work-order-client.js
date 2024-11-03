@@ -1,4 +1,4 @@
-import { formatDate, getDate, getDateFormat2, getDay } from '../../utils/date.js';
+import { formatDate, getDateFormat2} from '../../utils/date.js';
 
 const workOrdersClientPage = {
     getWorkOrders : async () => {
