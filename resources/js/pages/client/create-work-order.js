@@ -38,13 +38,25 @@ const createWorkOrderPage = {
 
                         if (typeof errors === 'object' && errors !== null) {
                             Object.keys(errors).forEach(key => {
-                                if(document.querySelector(`input[name='${key}']`)) {
-                                    document.querySelector(`input[name='${key}']`).classList.add('border-2', 'border-red-500');
-                                }else{
-                                    document.querySelector(`textarea[name='${key}']`).classList.add('border-2', 'border-red-500');
+                                const input = document.querySelector(`input[name='${key}']`);
+                                const textarea = document.querySelector(`textarea[name='${key}']`);
+                                const errorElement = document.getElementById(`${key}-error`);
+                            
+                                if (input) {
+                                    input.classList.add('border-2', 'border-red-500');
+                                } else if (textarea) {
+                                    textarea.classList.add('border-2', 'border-red-500');
                                 }
-                                
-                                document.getElementById(`${key}-error`).textContent = '*' + errors[key];
+                            
+                                if (errorElement) {
+                                    errorElement.textContent = '*' + errors[key];
+                                }
+                            });
+                            
+                            document.querySelectorAll('input, textarea').forEach(element => {
+                                if (!errors[element.name]) {
+                                    element.classList.remove('border-2', 'border-red-500');
+                                }
                             });
                         } else if (typeof errors === 'string') {
                             console.log(errors)

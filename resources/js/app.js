@@ -24,6 +24,8 @@ import presentPICSPVPage from './pages/spv/present-pic-spv.js';
 import workSchedulePICPage from './pages/pic/work-schedule.js';
 import workOrdersPICPage from './pages/pic/work-order-pic.js';
 import workOrderCheckSPVPage from './pages/spv/work-order-check.js';
+import workChecklistPage from './pages/client/work-checklist-client.js';
+import workChecklistSPVPage from './pages/spv/work-checklist-spv.js';
 
 (async () => {
     await loginPage();
@@ -45,6 +47,8 @@ import workOrderCheckSPVPage from './pages/spv/work-order-check.js';
     await workOrderSPVPage.getWorkOrders();
     await workOrderAssignSPVPage.getWorkOrderById();
 
+    await workChecklistSPVPage.getWorkChecklists();
+
     dashboardManagerPage.getAccount();
     await dashboardManagerPage.getWorkOrders();
     await dashboardManagerPage.getCompanies();
@@ -62,6 +66,8 @@ import workOrderCheckSPVPage from './pages/spv/work-order-check.js';
 
     await presentPICClientPage.getPICAttendances();
     await presentSPVClientPage.getSPVAttendances();
+
+    await workChecklistPage.getWorkChecklists();
 
     await createWorkOrderPage.setWorkOrder();
     await workOrdersClientPage.getWorkOrders();

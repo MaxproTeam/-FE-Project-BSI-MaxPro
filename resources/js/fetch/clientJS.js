@@ -2,7 +2,7 @@ import Cookie from '../utils/cookie.js';
 
 const getPICAttedances = async (data) => {
   try {
-    const response = await axios.get(`https://rockesroll.id/backend/api/v1/client/pic-attendances`, {
+    const response = await axios.get(`http://localhost:3000/api/v1/client/pic-attendances`, {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
@@ -20,7 +20,7 @@ const getPICAttedances = async (data) => {
 
 const getSPVAttedances = async (data) => {
   try {
-    const response = await axios.get(`https://rockesroll.id/backend/api/v1/client/spv-attendances`, {
+    const response = await axios.get(`http://localhost:3000/api/v1/client/spv-attendances`, {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
@@ -38,7 +38,7 @@ const getSPVAttedances = async (data) => {
 
 const getWorkOrders = async (data) => {
   try {
-    const response = await axios.get(`https://rockesroll.id/backend/api/v1/client/work-orders`, {
+    const response = await axios.get(`http://localhost:3000/api/v1/client/work-orders`, {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
@@ -56,7 +56,7 @@ const getWorkOrders = async (data) => {
 
 const setWorkOrder = async (data) => {
   try {
-    const response = await axios.post('https://rockesroll.id/backend/api/v1/client/work-orders', data, {
+    const response = await axios.post('http://localhost:3000/api/v1/client/work-orders', data, {
     headers: {
         'Content-Type': 'application/json'
       },

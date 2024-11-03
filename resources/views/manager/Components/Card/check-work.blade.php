@@ -38,7 +38,7 @@
     }
 </style>
 
-<div onclick="dataCheckWork()" class="border-gradient flex items-center gap-2.5 justify-center py-5">
+<div onclick="dataCheckWork()" class="border-gradient flex items-center gap-2.5 justify-center py-5 cursor-pointer">
     <p class="text-lg font-bold text-black">Ceklis Pekerjaan</p>
     <svg id="arrow-check-work" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M19.5 9.5L12.5 16.5L5.5 9.5" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -50,7 +50,8 @@
 
     <div class="px-4 mt-8">
         <div class="flex flex-col gap-y-[18px] mt-[18px]">
-            <div class="bg-white p-3 rounded-xl drop-shadow-lg flex items-end justify-between">
+            <p class="font-bold text-center border border-black">Masih dalam tahap Development</p>
+            {{-- <div class="bg-white p-3 rounded-xl drop-shadow-lg flex items-end justify-between">
                 <div>
                     <p class="poppins bg-orange-30 text-white font-medium text-xs uppercase px-1.5 py-0.5 tracking-[0.1rem] rounded-md w-fit">JANITOR</p>
                     <p class="poppins text-black font-medium text-base mt-4">Klining Toilet Lt.3</p>
@@ -109,7 +110,7 @@
                     </p>
                 </div>
                 <button class="bg-green-10 text-white w-[147px] h-10 text-sm rounded-2xl font-bold sm:active:bg-gray-700 active:scale-95 transition-all duration-100 ease-in-out">Lihat Penilaian</button>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>

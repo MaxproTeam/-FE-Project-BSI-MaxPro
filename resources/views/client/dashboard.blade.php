@@ -33,10 +33,10 @@
     @include('client.Components.Identity.identity')
 
     <div class="px-4 flex flex-col gap-y-7 mt-8">
-        <div onclick="window.location.href=''" class="border-gradient flex items-center gap-2.5 justify-center py-5">
+        {{-- <div onclick="window.location.href=''" class="border-gradient flex items-center gap-2.5 justify-center py-5">
             <p class="text-lg font-bold text-black">Data Absensi</p>
-        </div>
-        <div onclick="window.location.href='/work-check-client'" class="border-gradient flex items-center gap-2.5 justify-center py-5">
+        </div> --}}
+        <div onclick="window.location.href='/work-check-client'" class="border-gradient flex items-center gap-2.5 justify-center py-5 cursor-pointer">
             <p class="text-lg font-bold text-black">Ceklis Pekerjaan</p>
         </div>
     </div>

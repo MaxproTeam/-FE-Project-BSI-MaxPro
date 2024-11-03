@@ -9,7 +9,16 @@
             </tr>
         </thead>
         <tbody>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
             <tr>
+                <td colspan="4">
+                    <p class="text-center font-bold mt-10 border border-black">Masih dalam tahap Development</p>
+                </td>
+            </tr>
+
+            {{-- <tr>
                 <td class="text-center font-semibold text-grey text-sm pt-6 min-w-32 max-w-44">Toilet Lt.1</td>
                 <td class="text-center font-semibold text-grey text-sm pt-6 min-w-32 max-w-44">Agustus</td>
                 <td class="text-center font-semibold text-grey text-sm pt-6 min-w-32 max-w-44">1</td>
@@ -32,7 +41,7 @@
                 <td class="text-center font-semibold text-grey text-sm pt-6 min-w-32 max-w-44">Agustus</td>
                 <td class="text-center font-semibold text-grey text-sm pt-6 min-w-32 max-w-44">1</td>
                 <td class="text-center font-semibold text-grey text-sm pt-6 min-w-32 max-w-44">CHECKED</td>
-            </tr>
+            </tr> --}}
         </tbody>
     </table>
 </div>

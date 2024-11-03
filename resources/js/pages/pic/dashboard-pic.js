@@ -116,7 +116,7 @@ const dashboardPICPage = {
                             <button data-index="${index}" data-work_order="${work_order.id}" class="btn-done-work-order bg-green-10 text-white w-[147px] h-10 text-sm rounded-2xl font-bold sm:active:bg-gray-700 active:scale-95 transition-all duration-100 ease-in-out">Tandai Selesai</button>
                         </div>
                         `
-                        const btnDoneWorkOrder = document.querySelectorAll(`.btn-done-work-order[data-index='${index}']`);
+                        const btnDoneWorkOrder = document.querySelectorAll(`.btn-done-work-order`);
 
                         btnDoneWorkOrder.forEach(btn => {
                             btn.addEventListener('click', async (event) => {

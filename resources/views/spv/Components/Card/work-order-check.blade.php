@@ -23,9 +23,11 @@
 
     <div class="mt-6">
         <p class="font-semibold text-black text-xl">Pilih PIC</p>
-        <select id="select-pic" class="custom-select text-black text-[15px] pr-4 w-full text-xl py-2.5 px-2 bg-white drop-shadow-2xl rounded-lg mt-6">
+        <select id="select-pic" name="pic" class="custom-select text-black text-[15px] pr-4 w-full text-xl py-2.5 px-2 bg-white drop-shadow-2xl rounded-lg mt-6">
             <option selected hidden value="null">Pilih PIC</option>
         </select>
+        <span id="pic-error" class="text-red-500"></span>
+
         <p class="font-semibold text-black text-xl mt-6">Catatan</p>
         <textarea id="notes" type="text" autocomplete="off" rows="6" class="w-full bg-white px-4 py-2.5 rounded-lg drop-shadow-2xl mt-4"></textarea>
         <button id="btn-assign-work-order" class="bg-green-10 w-full rounded-2xl h-[70px] mt-16 font-semibold text-white lg:hover:bg-green-700 sm:active:bg-gray-700 active:scale-95 transition-all duration-100 ease-in-out">

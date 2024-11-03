@@ -109,6 +109,8 @@
         <p class="font-semibold text-xl text-black mt-5">Catatan</p>
         <input type="text" id="notes" name="notes" autocomplete="off" class="w-full bg-white px-4 py-2.5 rounded-lg drop-shadow-xl mt-4">
 
+        <span id="errors" class="text-red-500 text-center font-bold"></span>
+
         <button id="btn-check-work-order" class="bg-green-10 w-full rounded-2xl h-[70px] mt-16 font-semibold text-white lg:hover:bg-green-700 sm:active:bg-gray-700 active:scale-95 transition-all duration-100 ease-in-out">
             Simpan
         </button>

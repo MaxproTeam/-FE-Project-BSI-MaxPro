@@ -31,7 +31,6 @@ const workOrderAssignSPVPage = {
                     notesInput.value = work_order.notes === '' ? null : work_order.notes;
                     
                     if(work_order.pic) {
-
                         btnAssignWorkOrder.classList.add('hidden');
                     }
                 }else {
@@ -83,7 +82,19 @@ const workOrderAssignSPVPage = {
                         const errors = assignWorkOrder.errors;
                         
                         if (typeof errors === 'object' && errors !== null) {
-                            console.log(errors)
+                            Object.keys(errors).forEach(key => {
+                                const select = document.querySelector(`select[name='${key}']`);
+                                const textError = document.getElementById(`${key}-error`);
+
+                                if(select){
+                                    select.classList.add('border-2', 'border-red-500');
+                                }
+
+                                if(textError) {
+                                    textError.textContent = '*' + errors[key];
+                                }
+                                
+                            });
                         } else if (typeof errors === 'string') {
                             console.log(errors)
                         }

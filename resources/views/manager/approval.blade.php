@@ -39,8 +39,12 @@
 
     if(myAccount.role === 'Manager') {
         document.getElementById('sidebar-manager').classList.remove('hidden')
-    }else{
+    }else if(myAccount.role === 'Client'){
         document.getElementById('sidebar-client').classList.remove('hidden')
+    }else if(myAccount.role === 'Supervisor Cleaning'){
+        document.getElementById('sidebar-spv').classList.remove('hidden')
+    }else if(myAccount.role === 'PIC Cleaning'){
+        document.getElementById('sidebar-pic').classList.remove('hidden')
     }
 </script>
 

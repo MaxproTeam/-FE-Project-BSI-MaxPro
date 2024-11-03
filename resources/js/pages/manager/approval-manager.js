@@ -39,7 +39,7 @@ const approvalManagerPage = {
                     woStart.textContent = getDate(data.work_order.start_work);
                     woEnd.textContent = getDate(data.work_order.end_work);
                     woDescription.innerHTML = data.work_order.description.replace(/\n/g, '<br>');
-                    woNotes.textContent = data.work_order.notes ? data.work_order.notes : 'Tidak ada catatan.';
+                    woNotes.innerHTML = data.work_order.notes ? data.work_order.notes.replace(/\n/g, '<br>') : 'Tidak ada catatan.';
                     
                     if(user.role !== 'Manager') {
                         document.querySelector(`select[name="approve-select"]`).classList.add('hidden')

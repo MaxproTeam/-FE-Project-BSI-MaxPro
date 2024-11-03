@@ -48,7 +48,7 @@ const workOrderCheckSPVPage = {
                     });
 
                     evaluations['notes'] = notesInput.value;
-
+                    
                     const assignWorkOrder = await module.checkWorkOrder({work_id: id, evaluations : evaluations})
 
                     if(assignWorkOrder.status_code === 201) {
@@ -58,6 +58,7 @@ const workOrderCheckSPVPage = {
                         
                         if (typeof errors === 'object' && errors !== null) {
                             console.log(errors)
+                            document.getElementById('errors').textContent= '* Semua data wajib diisi.'
                         } else if (typeof errors === 'string') {
                             console.log(errors)
                         }

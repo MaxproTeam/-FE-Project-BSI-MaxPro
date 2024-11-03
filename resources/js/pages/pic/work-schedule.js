@@ -41,7 +41,7 @@ const workSchedulePICPage = {
                         </div>
                         `
 
-                        const btnDoneWorkOrder = document.querySelectorAll(`.btn-done-work-order[data-index='${index}']`);
+                        const btnDoneWorkOrder = document.querySelectorAll(`.btn-done-work-order`);
 
                         btnDoneWorkOrder.forEach(btn => {
                             btn.addEventListener('click', async (event) => {
